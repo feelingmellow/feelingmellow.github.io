@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Have A Mellow Day</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="landscape">
+        <div class="sky"></div>
+        <div class="sun"></div>
+        <div class="cloud cloud1"></div>
+        <div class="cloud cloud2"></div>
+        <div class="mountains">
+            <div class="franklin-mountains"></div>
+            <a href="star.html" class="star"></a>
+        </div>
+        <div class="desert">
+            <a href="cactus.html" class="cactus"></a>
+            <a href="cactus.html" class="cactus"></a>
+            
+        </div>
+    </div>
+    <div class="dust-container"></div>
+    <div class="content">
+        <h1>Have A Mellow Day</h1>
+        <p class="blink">A New Kind of Happy Hour</p>
+        <div class="planet-system">
+            <a href="about.html" class="logo-space">
+                <img src="themoon.png" alt="Mellow Logo" class="logo-image">
+            </a>
+            <a href="contact.html" class="nav-button" id="contact">
+                <span class="nav-icon">📞</span>Contact
+            </a>
+            <a href="art.html" class="nav-button" id="art">
+                <span class="nav-icon">🖌️</span>Art
+            </a>
+            <a href="menu.html" class="nav-button" id="menu">
+                <span class="nav-icon">🍹</span>Menu
+            </a>
+            <a href="research.html" class="nav-button" id="research">
+                <span class="nav-icon">📚</span>Research
+            </a>
+            <a href="plants.html" class="nav-button" id="plants">
+                <span class="nav-icon">🌸</span>Plants
+            </a>
+            <a href="clock.html" class="nav-button" id="clock">
+                <span class="nav-icon">🕰️</span>Clock
+            </a>
+            <a href="events.html" class="nav-button" id="events">
+                <span class="nav-icon">△</span>Events
+            </a>
+            <a href="yoga.html" class="nav-button" id="yoga">
+                <span class="nav-icon">☯️</span>Yoga
+
+            </a>
+        </div>
+    </div>
+    <div class="social-media">
+        <a href="https://www.instagram.com/haveamellow.day" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+        <marquee behavior="scroll" direction="left" scrollamount="3" class="social-text">follow us @haveamellow.day</marquee>
+    </div>
+    <script>
+        function createDustParticles() {
+            const container = document.querySelector('.dust-container');
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('dust-particle');
+                particle.style.left = Math.random() * 100 + 'vw';
+                particle.style.animationDelay = Math.random() * 8 + 's';
+                particle.style.opacity = Math.random() * 0.5 + 0.1;
+                container.appendChild(particle);
+            }
+        }
+        createDustParticles();
+    </script>
+</body>
+</html>
