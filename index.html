@@ -45,5 +45,21 @@
     </div>
     <div class="social-media">
         <a href="https://www.instagram.com/haveamellow.day" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
-        <marquee behavior="scroll" direction="
-
+        <marquee behavior="scroll" direction="left" scrollamount="3" class="social-text">follow us @haveamellow.day</marquee>
+    </div>
+    <script>
+        function createDustParticles() {
+            const container = document.querySelector('.dust-container');
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('dust-particle');
+                particle.style.left = Math.random() * 100 + 'vw';
+                particle.style.animationDelay = Math.random() * 8 + 's';
+                particle.style.opacity = Math.random() * 0.5 + 0.1;
+                container.appendChild(particle);
+            }
+        }
+        createDustParticles();
+    </script>
+</body>
+</html>
