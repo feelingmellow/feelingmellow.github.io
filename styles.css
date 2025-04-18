@@ -304,7 +304,20 @@ h1 {
 .nav-button:hover {
     transform: scale(1.1);
 }
+#library {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    background-color: #6a5acd; /* A mellow purple */
+    padding: 10px 20px;
+    border-radius: 8px;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
 
+#library:hover {
+    background-color: #483d8b; /* Darker purple on hover */
+}
 .nav-icon {
     font-size: 32px;
     margin-bottom: 4px;
