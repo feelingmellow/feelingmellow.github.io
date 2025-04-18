@@ -7,7 +7,7 @@ body {
     color: #8B4513;
     text-align: center;
     overflow-x: hidden;
-    background: #87CEEB;
+    background: #87CEEB; /* Sky blue background */
 }
 
 .landscape {
@@ -16,7 +16,76 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
+    z-index: -1; /* Ensure it's behind all other content */
+}
+
+.sky {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70%; /* Covers a portion of the screen */
+    background: linear-gradient(to bottom, #87CEEB, #E0F6FF); /* Gradient for the sky */
+}
+
+.sun {
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 80px;
+    background: #FFD700; /* Sun color */
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+}
+
+.cloud {
+    position: absolute;
+    background: white;
+    border-radius: 20px;
+    opacity: 0.8;
+}
+
+.cloud1 {
+    width: 100px;
+    height: 30px;
+    top: 80px;
+    left: 20%;
+}
+
+.cloud2 {
+    width: 140px;
+    height: 40px;
+    top: 60px;
+    right: 20%;
+}
+
+.mountains {
+    position: absolute;
+    bottom: 15%;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    z-index: 1;
+}
+
+.franklin-mountains {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #8B4513, #A0522D);
+    clip-path: polygon(
+        0% 100%,    /* Start at bottom-left */
+        0% 80%,     /* Base of first mountain */
+        30% 10%,    /* Peak of first mountain */
+        50% 20%,    /* Valley between first and second mountains */
+        80% 15%,    /* Peak of second mountain */
+        100% 20%,   /* Valley between second and third mountains */
+        100% 100%   /* End at bottom-right */
+    );
 }
 
 .desert {
@@ -24,102 +93,13 @@ body {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 20%; /* Ensure the height is visible */
-    background: linear-gradient(to bottom, #D2691E, #F4A460);
-    z-index: 1;
+    height: 20%; /* Ensure the desert is visible */
+    background: linear-gradient(to bottom, #D2691E, #F4A460); /* Desert colors */
+    z-index: 2; /* Ensure it appears above the sky and mountains */
 }
 
-.blink {
+.cactus {
     position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: #000; /* Ensure consistent color */
-    font-size: 36px;
-    animation: blink-animation 1s steps(5, start) infinite;
-    text-align: center;
-}
-
-@keyframes blink-animation {
-    to { visibility: hidden; }
-}
-
-/* Dropdown Navigation */
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropbtn {
-    background-color: #6a5acd; /* Mellow purple */
-    color: white;
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    border-radius: 8px;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    border-radius: 8px;
-}
-
-.dropdown-content a {
-    color: black;
-    padding: 10px 16px;
-    text-decoration: none;
-    display: block;
-    border-radius: 8px;
-}
-
-.dropdown-content a:hover {
-    background-color: #f1f1f1;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-.dropdown:hover .dropbtn {
-    background-color: #483d8b; /* Darker purple */
-}
-
-/* Universal Styles for Consistency on All Screens */
-* {
-    box-sizing: border-box;
-}
-
-h1 {
-    font-size: 54px; /* Adjusted for uniformity */
-    color: #FFA500;
-    text-shadow: 2px 2px #8B4513;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.blink {
-    font-size: 28px; /* Adjusted for uniformity */
-}
-
-.planet-system {
-    width: 400px;
-    height: 400px;
-    margin: 0 auto;
-}
-
-.logo-space {
-    width: 160px;
-    height: 160px;
-}
-
-.logo-image {
-    width: 100%;
-    height: auto;
-    max-width: 160px;
-}
+    bottom: 18%;
+    width:*
+
