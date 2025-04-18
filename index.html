@@ -8,8 +8,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
-        #contact, #plants, #clock, #events, #yoga, #art {
-            display: none;
+        .blink {
+            color: black; /* Changed font color to black */
+        }
+        .logo-image {
+            background: transparent; /* Removed white background */
         }
     </style>
 </head>
@@ -31,7 +34,6 @@
     <div class="dust-container"></div>
     <div class="content">
         <h1>Have A Mellow Day</h1>
-        <p class="blink">A New Kind of Happy Hour</p>
         <div class="planet-system">
             <a href="about.html" class="logo-space">
                 <img src="themoon.png" alt="Mellow Logo" class="logo-image">
@@ -45,8 +47,8 @@
             <a href="menu.html" class="nav-button" id="menu">
                 <span class="nav-icon">🍹</span>Menu
             </a>
-            <a href="research.html" class="nav-button" id="research">
-                <span class="nav-icon">📚</span>Research
+            <a href="library.html" class="nav-button" id="library">
+                <span class="nav-icon">📚</span>Library <!-- Renamed from Research -->
             </a>
             <a href="plants.html" class="nav-button" id="plants">
                 <span class="nav-icon">🌸</span>Plants
@@ -66,6 +68,7 @@
         <a href="https://www.instagram.com/haveamellow.day" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
         <marquee behavior="scroll" direction="left" scrollamount="3" class="social-text">follow us @haveamellow.day</marquee>
     </div>
+    <p class="blink">A New Kind of Happy Hour</p> <!-- Moved to the bottom -->
     <script>
         function createDustParticles() {
             const container = document.querySelector('.dust-container');
