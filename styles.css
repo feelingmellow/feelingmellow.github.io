@@ -19,4 +19,15 @@ body {
     z-index: -1;
 }
 
+.blink {
+    position: absolute; /* Added for precise positioning */
+    bottom: 20px; /* Moves the banner towards the bottom of the page */
+    left: 50%; /* Centers it horizontally */
+    transform: translateX(-50%); /* Centers it properly */
+    color: #000; /* Changes font color to black */
+    font-size: 36px;
+    margin-bottom: 20px;
+    animation: blink-animation 1s steps(5, start) infinite;
+    text-align: center;
+}
 /* The rest of the CSS file follows the same structure. If you need specific parts or the full file, let me know! */
