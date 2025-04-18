@@ -21,37 +21,43 @@ body {
     margin: 0 auto;
 }
 
-.sandwich-menu {
-    display: flex;
-    justify-content: center;
-    gap: 20px; /* Adjust the space between buttons */
-    margin-top: 20px;
-}
-
 .nav-button {
-    text-align: center;
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.5rem;
-    padding: 10px;
-}
-
-.sandwich-icon {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    font-size: 20px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 50px;
-    height: 50px;
-    margin: 0 auto 10px auto;
-    cursor: pointer;
+    transition: transform 0.3s;
+}
+.nav-button:hover {
+    transform: scale(1.1);
+}
+.nav-icon {
+    font-size: 32px;
+    margin-bottom: 4px;
 }
 
-.sandwich-icon span {
-    display: block;
-    width: 30px;
-    height: 4px;
-    margin: 4px 0;
-    background-color: #fff;
-    transition*
-
+/* Library Buttons */
+#library-1, #library-2 {
+    background-color: #6a5acd; /* mellow purple */
+}
+#library-1:hover, #library-2:hover {
+    background-color: #483d8b; /* darker purple */
+}
+
+/* Social Media */
+.social-media, .social-icon, .social-text { /* existing styles */ }
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .planet-system { width: 340px; height: 340px; }
+    .nav-button { width: 60px; height: 60px; font-size: 18px; }
+    .nav-icon { font-size: 28px; }
+}
