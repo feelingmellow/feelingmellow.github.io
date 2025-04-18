@@ -19,6 +19,16 @@ body {
     z-index: -1;
 }
 
+.desert {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20%; /* Ensure the height is visible */
+    background: linear-gradient(to bottom, #D2691E, #F4A460);
+    z-index: 1;
+}
+
 .blink {
     position: absolute;
     bottom: 20px;
@@ -85,7 +95,6 @@ body {
     box-sizing: border-box;
 }
 
-/* Ensure all elements are sized and positioned consistently */
 h1 {
     font-size: 54px; /* Adjusted for uniformity */
     color: #FFA500;
@@ -98,7 +107,6 @@ h1 {
     font-size: 28px; /* Adjusted for uniformity */
 }
 
-/* Adjust planet-system container for consistent scaling */
 .planet-system {
     width: 400px;
     height: 400px;
@@ -114,90 +122,4 @@ h1 {
     width: 100%;
     height: auto;
     max-width: 160px;
-}
-
-.nav-button {
-    width: 70px;
-    height: 70px;
-    font-size: 20px;
-}
-
-/* Remove Mobile-Specific Styles */
-@media (max-width: 768px) {
-    .sun {
-        top: 40px;
-        width: 80px;
-        height: 80px;
-    }
-
-    .cloud1 {
-        width: 100px;
-        height: 30px;
-        top: 80px;
-        left: 20%;
-    }
-
-    .cloud1::before {
-        width: 50px;
-        height: 50px;
-        top: -25px;
-        left: 10px;
-    }
-
-    .cloud1::after {
-        width: 70px;
-        height: 70px;
-        top: -35px;
-        right: 10px;
-    }
-
-    .cloud2 {
-        width: 140px;
-        height: 40px;
-        top: 60px;
-        right: 20%;
-    }
-
-    .cloud2::before {
-        width: 70px;
-        height: 70px;
-        top: -35px;
-        left: 15px;
-    }
-
-    .cloud2::after {
-        width: 90px;
-        height: 90px;
-        top: -45px;
-        right: 15px;
-    }
-
-    /* Override mobile-specific styles for consistency */
-    h1 {
-        font-size: 54px; /* Make title size consistent */
-    }
-
-    .blink {
-        font-size: 28px; /* Make blinking banner size consistent */
-    }
-
-    .planet-system {
-        width: 400px; /* Ensure consistent size */
-        height: 400px;
-    }
-
-    .logo-space {
-        width: 160px; /* Ensure consistent size */
-        height: 160px;
-    }
-
-    .logo-image {
-        max-width: 160px; /* Ensure consistent size */
-    }
-
-    .nav-button {
-        width: 70px; /* Ensure consistent size */
-        height: 70px;
-        font-size: 20px;
-    }
 }
