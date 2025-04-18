@@ -20,11 +20,11 @@ body {
 }
 
 .blink {
-    position: absolute; /* Added for precise positioning */
-    bottom: 20px; /* Moves the banner towards the bottom of the page */
-    left: 50%; /* Centers it horizontally */
-    transform: translateX(-50%); /* Ensures proper centering */
-    color: #000; /* Changes font color to black */
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #000; /* Ensure consistent color */
     font-size: 36px;
     animation: blink-animation 1s steps(5, start) infinite;
     text-align: center;
@@ -80,4 +80,124 @@ body {
     background-color: #483d8b; /* Darker purple */
 }
 
-/* Add or adjust other styles as necessary */
+/* Universal Styles for Consistency on All Screens */
+* {
+    box-sizing: border-box;
+}
+
+/* Ensure all elements are sized and positioned consistently */
+h1 {
+    font-size: 54px; /* Adjusted for uniformity */
+    color: #FFA500;
+    text-shadow: 2px 2px #8B4513;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.blink {
+    font-size: 28px; /* Adjusted for uniformity */
+}
+
+/* Adjust planet-system container for consistent scaling */
+.planet-system {
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
+}
+
+.logo-space {
+    width: 160px;
+    height: 160px;
+}
+
+.logo-image {
+    width: 100%;
+    height: auto;
+    max-width: 160px;
+}
+
+.nav-button {
+    width: 70px;
+    height: 70px;
+    font-size: 20px;
+}
+
+/* Remove Mobile-Specific Styles */
+@media (max-width: 768px) {
+    .sun {
+        top: 40px;
+        width: 80px;
+        height: 80px;
+    }
+
+    .cloud1 {
+        width: 100px;
+        height: 30px;
+        top: 80px;
+        left: 20%;
+    }
+
+    .cloud1::before {
+        width: 50px;
+        height: 50px;
+        top: -25px;
+        left: 10px;
+    }
+
+    .cloud1::after {
+        width: 70px;
+        height: 70px;
+        top: -35px;
+        right: 10px;
+    }
+
+    .cloud2 {
+        width: 140px;
+        height: 40px;
+        top: 60px;
+        right: 20%;
+    }
+
+    .cloud2::before {
+        width: 70px;
+        height: 70px;
+        top: -35px;
+        left: 15px;
+    }
+
+    .cloud2::after {
+        width: 90px;
+        height: 90px;
+        top: -45px;
+        right: 15px;
+    }
+
+    /* Override mobile-specific styles for consistency */
+    h1 {
+        font-size: 54px; /* Make title size consistent */
+    }
+
+    .blink {
+        font-size: 28px; /* Make blinking banner size consistent */
+    }
+
+    .planet-system {
+        width: 400px; /* Ensure consistent size */
+        height: 400px;
+    }
+
+    .logo-space {
+        width: 160px; /* Ensure consistent size */
+        height: 160px;
+    }
+
+    .logo-image {
+        max-width: 160px; /* Ensure consistent size */
+    }
+
+    .nav-button {
+        width: 70px; /* Ensure consistent size */
+        height: 70px;
+        font-size: 20px;
+    }
+}
