@@ -9,10 +9,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         .blink {
-            color: black; /* Changed font color to black */
+            color: black; /* Font color remains black */
+            position: relative;
+            top: -15%; /* Raised by 15% */
         }
         .logo-image {
-            background: transparent; /* Removed white background */
+            background: transparent; /* Ensures no white background */
+        }
+        /* Hide all icons except Library and Menu */
+        #contact, #art, #plants, #clock, #events, #yoga {
+            display: none;
         }
     </style>
 </head>
@@ -38,29 +44,11 @@
             <a href="about.html" class="logo-space">
                 <img src="themoon.png" alt="Mellow Logo" class="logo-image">
             </a>
-            <a href="contact.html" class="nav-button" id="contact">
-                <span class="nav-icon">📞</span>Contact
-            </a>
-            <a href="art.html" class="nav-button" id="art">
-                <span class="nav-icon">🖌️</span>Art
-            </a>
             <a href="menu.html" class="nav-button" id="menu">
                 <span class="nav-icon">🍹</span>Menu
             </a>
             <a href="library.html" class="nav-button" id="library">
-                <span class="nav-icon">📚</span>Library <!-- Renamed from Research -->
-            </a>
-            <a href="plants.html" class="nav-button" id="plants">
-                <span class="nav-icon">🌸</span>Plants
-            </a>
-            <a href="clock.html" class="nav-button" id="clock">
-                <span class="nav-icon">🕰️</span>Clock
-            </a>
-            <a href="events.html" class="nav-button" id="events">
-                <span class="nav-icon">△</span>Events
-            </a>
-            <a href="yoga.html" class="nav-button" id="yoga">
-                <span class="nav-icon">☯️</span>Yoga
+                <span class="nav-icon">📚</span>Library
             </a>
         </div>
     </div>
@@ -68,7 +56,7 @@
         <a href="https://www.instagram.com/haveamellow.day" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
         <marquee behavior="scroll" direction="left" scrollamount="3" class="social-text">follow us @haveamellow.day</marquee>
     </div>
-    <p class="blink">A New Kind of Happy Hour</p> <!-- Moved to the bottom -->
+    <p class="blink">A New Kind of Happy Hour</p>
     <script>
         function createDustParticles() {
             const container = document.querySelector('.dust-container');
