@@ -25,6 +25,11 @@
             pointer-events: none;
             cursor: default;
         }
+        /* Lower the "Have A Mellow Day" text by 15% vertically */
+        .lowered-title {
+            position: relative;
+            top: 15%;
+        }
     </style>
 </head>
 <body>
@@ -44,7 +49,7 @@
     </div>
     <div class="dust-container"></div>
     <div class="content">
-        <h1>Have A Mellow Day</h1>
+        <h1 class="lowered-title">Have A Mellow Day</h1>
         <div class="planet-system">
             <!-- The about.html (moon logo) link is now visible but not clickable -->
             <a href="about.html" class="logo-space">
