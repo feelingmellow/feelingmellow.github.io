@@ -20,9 +20,10 @@
         #contact, #art, #plants, #clock, #events, #yoga {
             display: none;
         }
-        /* Hide the about logo (moon) link */
+        /* Make the moon logo (about.html link) visible but not clickable */
         .logo-space {
-            display: none !important;
+            pointer-events: none;
+            cursor: default;
         }
     </style>
 </head>
@@ -45,7 +46,7 @@
     <div class="content">
         <h1>Have A Mellow Day</h1>
         <div class="planet-system">
-            <!-- The about.html (moon logo) link is now hidden by CSS. -->
+            <!-- The about.html (moon logo) link is now visible but not clickable -->
             <a href="about.html" class="logo-space">
                 <img src="themoon.png" alt="Mellow Logo" class="logo-image">
             </a>
