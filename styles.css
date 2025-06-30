@@ -430,3 +430,6 @@ h1 {
 
     .nav-icon {
         font-size:
+.social-media, .social-icon {
+    pointer-events: auto !important;
+}
