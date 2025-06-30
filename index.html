@@ -12,51 +12,41 @@
             height: 100%;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+            overflow-x: hidden;
         }
         body {
             min-height: 100vh;
+            width: 100vw;
             position: relative;
-            overflow-x: hidden;
         }
-        .blink {
-            color: black;
-            position: relative;
-            top: -15%;
-        }
-        .logo-image {
-            background: transparent;
-        }
-        #contact, #art, #plants, #clock, #events, #yoga {
-            display: none;
-        }
-        .logo-space {
-            pointer-events: none;
-            cursor: default;
-        }
-        .menu-button-container {
+        .landscape {
             position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            bottom: 15%;
-            width: 100%;
-            text-align: center;
-            z-index: 2;
-            display: none; /* Hide the menu button */
+            top: 0; left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 0;
         }
-        /* Use flex to center content vertically */
+        .dust-container {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 1;
+            pointer-events: none;
+        }
         .content {
             position: relative;
             z-index: 2;
-            min-height: 60vh;
+            min-height: 100vh;
+            width: 100vw;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: center; /* vertical centering */
+            pointer-events: auto;
         }
-        /* Remove the previous .lowered-title top shift! */
         .lowered-title {
-            /* position: relative; */
-            /* top: 35%; */
             margin-bottom: 16px;
         }
         .planet-system {
@@ -64,12 +54,23 @@
             flex-direction: column;
             align-items: center;
         }
-        /* Social media bar fixed at bottom */
+        .logo-space img {
+            width: 120px;
+            height: auto;
+            display: block;
+        }
+        .logo-space {
+            pointer-events: none;
+            cursor: default;
+        }
+        .menu-button-container {
+            display: none;
+        }
         .social-media {
             position: fixed;
             left: 0;
             bottom: 0;
-            width: 100%;
+            width: 100vw;
             z-index: 10000;
             background: rgba(255,255,255,0.7);
             pointer-events: auto;
@@ -93,10 +94,13 @@
             background: none;
             border: none;
         }
-        .landscape,
-        .dust-container {
-            z-index: 1 !important;
-            position: relative !important;
+        /* Remove any large top shifting or extra paddings/margins here! */
+        .blink {
+            color: black;
+            margin: 0;
+        }
+        #contact, #art, #plants, #clock, #events, #yoga {
+            display: none;
         }
     </style>
 </head>
