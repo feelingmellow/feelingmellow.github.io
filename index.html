@@ -51,7 +51,6 @@
             width: 100%;
             text-align: center;
             z-index: 2;
-            /* Hide the menu button container */
             display: none;
         }
         html, body {
@@ -67,9 +66,17 @@
             position: relative;
             z-index: 2;
         }
-        /* Add pointer for instagram icon */
+        /* --- FIX: Ensure Instagram link is always clickable --- */
         .social-icon {
+            pointer-events: auto !important;
             cursor: pointer;
+            z-index: 10;
+            position: relative;
+        }
+        .social-media {
+            pointer-events: auto !important;
+            z-index: 10;
+            position: relative;
         }
     </style>
 </head>
