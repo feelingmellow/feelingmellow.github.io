@@ -350,10 +350,6 @@ h1 {
     text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
     width: 100%;
 }
-.social-media {
-    position: relative;
-    z-index: 100;
-}
 
 
 @media (max-width: 768px) {
@@ -432,30 +428,3 @@ h1 {
         height: 60px;
         font-size: 18px;
     }
-
-    .nav-icon {
-        font-size:
-.social-media, .social-icon {
-    pointer-events: auto !important;
-}
-.social-media {
-    position: relative;
-    z-index: 100;
-}
-
-    <div class="social-media">
-    <a href="https://www.instagram.com/mellowelpaso" target="_blank" class="social-icon" title="Follow us on Instagram">
-        <i class="fab fa-instagram"></i>
-    </a>
-    <marquee behavior="scroll" direction="left" scrollamount="3" class="social-text">follow @mellowelpaso</marquee>
-</div>
-<style>
-/* Ensure the social media icon is clickable and on top */
-.social-media, .social-icon {
-    pointer-events: auto !important;
-}
-.social-media {
-    position: relative;
-    z-index: 100;
-}
-</style>
