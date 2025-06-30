@@ -1,72 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Mellow Menu</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background: #fff8e1;
-    }
-    .menu-container {
-      max-width: 500px;
-      margin: 0 auto;
-      padding: 12px;
-    }
-    img {
-      width: 100%;
-      height: auto;
-      display: block;
-      border-radius: 12px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
-    }
-    @media (max-width: 600px) {
-      .menu-container {
-        max-width: 100%;
-        padding: 4px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Have A Mellow Day</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .blink {
+            color: black; /* Font color remains black */
+            position: relative;
+            top: -15%; /* Raised by 15% */
+        }
+        .logo-image {
+            background: transparent; /* Ensures no white background */
+        }
+        /* Hide all icons except Library and Menu */
+        #contact, #art, #plants, #clock, #events, #yoga {
+            display: none;
+        }
+        /* Make the moon logo (about.html link) visible but not clickable */
+        .logo-space {
+            pointer-events: none;
+            cursor: default;
+        }
+        /* Lower the "Have A Mellow Day" text by 15% vertically */
+        .lowered-title {
+            position: relative;
+            top: 35%;
+        }
+    </style>
 </head>
 <body>
-  <div class="menu-container">
-    <img src="day1.png" alt="Mellow Kava Bar Menu" usemap="#mellowmenumap" id="menupic">
-    <map name="mellowmenumap">
-      <area shape="rect" coords="65,140,260,175" href="https://pay.mellowelpaso.com/firsttime" alt="First Timer" title="First Timer - $8">
-      <area shape="rect" coords="65,180,260,215" href="https://pay.mellowelpaso.com/kava" alt="Kavaguama" title="Kavaguama - $20">
-      <area shape="rect" coords="70,415,350,445" href="https://pay.mellowelpaso.com/lakavachata" alt="La Kavachata" title="La Kavachata - $7">
-      <area shape="rect" coords="70,475,350,505" href="https://pay.mellowelpaso.com/pinacalmada" alt="Pina Calmada" title="Pina Calmada - $7">
-      <area shape="rect" coords="70,535,350,565" href="https://pay.mellowelpaso.com/javaconkava" alt="Java Con Kava" title="Java Con Kava - $7">
-    </map>
-  </div>
-  <script>
-    // Make image map responsive
-    // This script recalculates the area coordinates based on image width
-    // Source: https://github.com/davidjbradshaw/image-map-resizer
-    function resizeMap() {
-      var img = document.getElementById('menupic');
-      var areas = document.querySelectorAll('map[name="mellowmenumap"] area');
-      var originalWidth = 995; // original day1.png width
-      var scale = img.offsetWidth / originalWidth;
-      var coords = [
-        [65,140,260,175],
-        [65,180,260,215],
-        [70,415,350,445],
-        [70,475,350,505],
-        [70,535,350,565]
-      ];
-      areas.forEach(function(area, i){
-        var scaled = coords[i].map(function(val){ return Math.round(val * scale); });
-        area.coords = scaled.join(',');
-      });
-    }
-    window.addEventListener('resize', resizeMap);
-    window.addEventListener('DOMContentLoaded', function(){
-      resizeMap();
-      setTimeout(resizeMap, 500); // for image load lag
-    });
-  </script>
+    <div class="landscape">
+        <div class="sky"></div>
+        <div class="sun"></div>
+        <div class="cloud cloud1"></div>
+        <div class="cloud cloud2"></div>
+        <div class="mountains">
+            <div class="franklin-mountains"></div>
+            <a href="star.html" class="star"></a>
+        </div>
+        <div class="desert">
+            <a href="cactus.html" class="cactus"></a>
+            <a href="cactus.html" class="cactus"></a>
+        </div>
+    </div>
+    <div class="dust-container"></div>
+    <div class="content">
+        <h1 class="lowered-title">Have A Mellow Day</h1>
+        <div class="planet-system">
+            <!-- The about.html (moon logo) link is now visible but not clickable -->
+            <a href="about.html" class="logo-space">
+                <img src="themoon.png" alt="Mellow Logo" class="logo-image">
+            </a>
+            <!-- Menu and Library buttons removed -->
+        </div>
+    </div>
+    <div class="social-media">
+        <a href="https://www.instagram.com/mellowelpaso" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+        <marquee behavior="scroll" direction="left" scrollamount="3" class="social-text">follow @mellowelpaso</marquee>
+    </div>
+    <p class="blink"></p>
+    <script>
+        function createDustParticles() {
+            const container = document.querySelector('.dust-container');
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('dust-particle');
+                particle.style.left = Math.random() * 100 + 'vw';
+                particle.style.animationDelay = Math.random() * 8 + 's';
+                particle.style.opacity = Math.random() * 0.5 + 0.1;
+                container.appendChild(particle);
+            }
+        }
+        createDustParticles();
+    </script>
 </body>
 </html>
