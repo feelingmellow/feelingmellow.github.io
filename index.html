@@ -66,18 +66,36 @@
             position: relative;
             z-index: 2;
         }
-
-        /* FIX: Ensure social-media is above overlays and fully clickable */
+        /* Place social-media fixed at bottom, on top of backgrounds, NOT pushing content down */
         .social-media {
-            position: relative !important;
-            z-index: 10000 !important;
-            pointer-events: auto !important;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            z-index: 10000;
+            background: rgba(255,255,255,0.7); /* optional: slight background for readability */
+            pointer-events: auto;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 8px 20px 8px 12px;
+            box-sizing: border-box;
         }
         .social-icon {
-            pointer-events: auto !important;
+            pointer-events: auto;
             cursor: pointer;
+            margin-right: 16px;
+            font-size: 2em;
         }
-        /* Lower all other overlays */
+        .social-text {
+            flex: 1;
+            font-family: 'Amatic SC', cursive;
+            font-size: 1.3em;
+            color: #333;
+            background: none;
+            border: none;
+        }
+        /* Lower all other overlays so social-media is on top */
         .landscape,
         .dust-container,
         .content {
@@ -114,7 +132,7 @@
     <div class="menu-button-container">
         <a href="menu.html" class="menu-button">Menu</a>
     </div>
-    <!-- FIXED: Social media section is now on top and clickable -->
+    <!-- Social media bar -->
     <div class="social-media">
         <a href="https://www.instagram.com/mellowelpaso" target="_blank" class="social-icon" title="Follow us on Instagram">
             <i class="fab fa-instagram"></i>
