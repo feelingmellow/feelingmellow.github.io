@@ -8,99 +8,64 @@
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
-        html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            overflow-x: hidden;
-        }
-        body {
-            min-height: 100vh;
-            width: 100vw;
+        .blink {
+            color: black;
             position: relative;
+            top: -15%;
         }
-        .landscape {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: 0;
+        .logo-image {
+            background: transparent;
         }
-        .dust-container {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: 1;
-            pointer-events: none;
-        }
-        .content {
-            position: relative;
-            z-index: 2;
-            min-height: 100vh;
-            width: 100vw;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center; /* vertical centering */
-            pointer-events: auto;
-        }
-        .lowered-title {
-            margin-bottom: 16px;
-        }
-        .planet-system {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .logo-space img {
-            width: 120px;
-            height: auto;
-            display: block;
+        #contact, #art, #plants, #clock, #events, #yoga {
+            display: none;
         }
         .logo-space {
             pointer-events: none;
             cursor: default;
         }
-        .menu-button-container {
-            display: none;
+        .lowered-title {
+            position: relative;
+            top: 35%;
         }
-        .social-media {
-            position: fixed;
-            left: 0;
-            bottom: 0;
-            width: 100vw;
-            z-index: 10000;
-            background: rgba(255,255,255,0.7);
-            pointer-events: auto;
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            padding: 8px 20px 8px 12px;
-            box-sizing: border-box;
-        }
-        .social-icon {
-            pointer-events: auto;
-            cursor: pointer;
-            margin-right: 16px;
-            font-size: 2em;
-        }
-        .social-text {
-            flex: 1;
-            font-family: 'Amatic SC', cursive;
-            font-size: 1.3em;
+        .menu-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 24px;
+            background: #ffeca4;
             color: #333;
-            background: none;
-            border: none;
+            text-decoration: none;
+            border-radius: 12px;
+            font-family: 'Amatic SC', cursive;
+            font-size: 1.5em;
+            box-shadow: 2px 4px 8px rgba(0,0,0,0.12);
+            transition: background 0.2s;
         }
-        /* Remove any large top shifting or extra paddings/margins here! */
-        .blink {
-            color: black;
-            margin: 0;
+        .menu-button:hover {
+            background: #ffe066;
         }
-        #contact, #art, #plants, #clock, #events, #yoga {
+        .menu-button-container {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 15%;
+            width: 100%;
+            text-align: center;
+            z-index: 2;
+            /* Hide the menu button container */
             display: none;
+        }
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            min-height: 100vh;
+            position: relative;
+        }
+        .content {
+            position: relative;
+            z-index: 2;
         }
     </style>
 </head>
@@ -132,9 +97,7 @@
         <a href="menu.html" class="menu-button">Menu</a>
     </div>
     <div class="social-media">
-        <a href="https://www.instagram.com/mellowelpaso" target="_blank" class="social-icon" title="Follow us on Instagram">
-            <i class="fab fa-instagram"></i>
-        </a>
+        <a href="https://www.instagram.com/mellowelpaso" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
         <marquee behavior="scroll" direction="left" scrollamount="3" class="social-text">follow @mellowelpaso</marquee>
     </div>
     <p class="blink"></p>
