@@ -6,6 +6,7 @@
     <title>Have A Mellow Day</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Make sure FontAwesome loads -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         .blink {
@@ -51,7 +52,6 @@
             width: 100%;
             text-align: center;
             z-index: 2;
-            /* Hide the menu button container */
             display: none;
         }
         html, body {
@@ -67,13 +67,15 @@
             position: relative;
             z-index: 2;
         }
-        .social-icon {
-            cursor: pointer;
-        }
-        /* --- Minimal fix to ensure Instagram icon is visible and clickable --- */
+        /* Force social-media to the top and make visible */
         .social-media {
-            position: relative;
-            z-index: 100;
+            position: relative !important;
+            z-index: 9999 !important;
+            background: rgba(255,255,255,0.6);
+        }
+        .social-icon i {
+            color: #000 !important;
+            font-size: 2em !important;
         }
     </style>
 </head>
