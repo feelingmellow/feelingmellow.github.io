@@ -27,7 +27,6 @@
             position: relative;
             top: 35%;
         }
-        /* Style for the Menu button */
         .menu-button {
             display: inline-block;
             margin-top: 20px;
@@ -44,7 +43,6 @@
         .menu-button:hover {
             background: #ffe066;
         }
-        /* New: Center and position the menu button lower on the page */
         .menu-button-container {
             position: absolute;
             left: 50%;
@@ -53,8 +51,9 @@
             width: 100%;
             text-align: center;
             z-index: 2;
+            /* Hide the menu button container */
+            display: none;
         }
-        /* For body full height positioning */
         html, body {
             height: 100%;
             margin: 0;
@@ -94,7 +93,7 @@
             </a>
         </div>
     </div>
-    <!-- Menu button lowered to the bottom half of the page -->
+    <!-- Menu button is now hidden via CSS (display: none) -->
     <div class="menu-button-container">
         <a href="menu.html" class="menu-button">Menu</a>
     </div>
