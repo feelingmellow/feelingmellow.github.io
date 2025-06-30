@@ -9,23 +9,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         .blink {
-            color: black; /* Font color remains black */
+            color: black;
             position: relative;
-            top: -15%; /* Raised by 15% */
+            top: -15%;
         }
         .logo-image {
-            background: transparent; /* Ensures no white background */
+            background: transparent;
         }
-        /* Hide all icons except Library and Menu */
         #contact, #art, #plants, #clock, #events, #yoga {
             display: none;
         }
-        /* Make the moon logo (about.html link) visible but not clickable */
         .logo-space {
             pointer-events: none;
             cursor: default;
         }
-        /* Lower the "Have A Mellow Day" text by 15% vertically */
         .lowered-title {
             position: relative;
             top: 35%;
@@ -46,6 +43,30 @@
         }
         .menu-button:hover {
             background: #ffe066;
+        }
+        /* New: Center and position the menu button lower on the page */
+        .menu-button-container {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 15%;
+            width: 100%;
+            text-align: center;
+            z-index: 2;
+        }
+        /* For body full height positioning */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            min-height: 100vh;
+            position: relative;
+        }
+        .content {
+            position: relative;
+            z-index: 2;
         }
     </style>
 </head>
@@ -68,13 +89,14 @@
     <div class="content">
         <h1 class="lowered-title">Have A Mellow Day</h1>
         <div class="planet-system">
-            <!-- The about.html (moon logo) link is now visible but not clickable -->
             <a href="about.html" class="logo-space">
                 <img src="themoon.png" alt="Mellow Logo" class="logo-image">
             </a>
-            <!-- Add Menu button here -->
-            <a href="menu.html" class="menu-button">Menu</a>
         </div>
+    </div>
+    <!-- Menu button lowered to the bottom half of the page -->
+    <div class="menu-button-container">
+        <a href="menu.html" class="menu-button">Menu</a>
     </div>
     <div class="social-media">
         <a href="https://www.instagram.com/mellowelpaso" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
