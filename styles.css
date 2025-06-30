@@ -428,3 +428,24 @@ h1 {
         height: 60px;
         font-size: 18px;
     }
+
+/* Force social-media to be on top and interactive */
+.social-media {
+    position: relative !important;
+    z-index: 9999 !important;
+    pointer-events: auto !important;
+}
+
+/* Make sure the link itself is clickable */
+.social-icon {
+    pointer-events: auto !important;
+    cursor: pointer;
+}
+
+/* If there are absolutely positioned overlays, make them lower */
+.landscape,
+.dust-container,
+.content {
+    z-index: 1 !important;
+    position: relative !important;
+}
