@@ -51,8 +51,7 @@
             width: 100%;
             text-align: center;
             z-index: 2;
-            /* Hide the menu button container */
-            display: none;
+            display: none; /* Hide the menu button */
         }
         html, body {
             height: 100%;
@@ -66,6 +65,24 @@
         .content {
             position: relative;
             z-index: 2;
+        }
+
+        /* FIX: Ensure social-media is above overlays and fully clickable */
+        .social-media {
+            position: relative !important;
+            z-index: 10000 !important;
+            pointer-events: auto !important;
+        }
+        .social-icon {
+            pointer-events: auto !important;
+            cursor: pointer;
+        }
+        /* Lower all other overlays */
+        .landscape,
+        .dust-container,
+        .content {
+            z-index: 1 !important;
+            position: relative !important;
         }
     </style>
 </head>
@@ -93,25 +110,17 @@
             </a>
         </div>
     </div>
-    <!-- Menu button is now hidden via CSS (display: none) -->
+    <!-- Menu button hidden -->
     <div class="menu-button-container">
         <a href="menu.html" class="menu-button">Menu</a>
     </div>
-      .social-media {
-            position: relative !important;
-            z-index: 9999 !important;
-            pointer-events: auto !important;
-        }
-        .social-icon {
-            pointer-events: auto !important;
-            cursor: pointer;
-        }
-        .landscape,
-        .dust-container,
-        .content {
-            z-index: 1 !important;
-            position: relative !important;
-        }
+    <!-- FIXED: Social media section is now on top and clickable -->
+    <div class="social-media">
+        <a href="https://www.instagram.com/mellowelpaso" target="_blank" class="social-icon" title="Follow us on Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <marquee behavior="scroll" direction="left" scrollamount="3" class="social-text">follow @mellowelpaso</marquee>
+    </div>
     <p class="blink"></p>
     <script>
         function createDustParticles() {
