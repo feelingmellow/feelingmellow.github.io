@@ -438,3 +438,7 @@ h1 {
 .social-media, .social-icon {
     pointer-events: auto !important;
 }
+.social-media {
+    position: relative;
+    z-index: 100;
+}
