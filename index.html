@@ -97,10 +97,21 @@
     <div class="menu-button-container">
         <a href="menu.html" class="menu-button">Menu</a>
     </div>
-    <div class="social-media">
-        <a href="https://www.instagram.com/mellowelpaso" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
-        <marquee behavior="scroll" direction="left" scrollamount="3" class="social-text">follow @mellowelpaso</marquee>
-    </div>
+      .social-media {
+            position: relative !important;
+            z-index: 9999 !important;
+            pointer-events: auto !important;
+        }
+        .social-icon {
+            pointer-events: auto !important;
+            cursor: pointer;
+        }
+        .landscape,
+        .dust-container,
+        .content {
+            z-index: 1 !important;
+            position: relative !important;
+        }
     <p class="blink"></p>
     <script>
         function createDustParticles() {
