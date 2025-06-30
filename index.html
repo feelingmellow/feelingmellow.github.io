@@ -51,6 +51,7 @@
             width: 100%;
             text-align: center;
             z-index: 2;
+            /* Hide the menu button container */
             display: none;
         }
         html, body {
@@ -66,17 +67,13 @@
             position: relative;
             z-index: 2;
         }
-        /* --- FIX: Ensure Instagram link is always clickable --- */
         .social-icon {
-            pointer-events: auto !important;
             cursor: pointer;
-            z-index: 10;
-            position: relative;
         }
+        /* --- Minimal fix to ensure Instagram icon is visible and clickable --- */
         .social-media {
-            pointer-events: auto !important;
-            z-index: 10;
             position: relative;
+            z-index: 100;
         }
     </style>
 </head>
