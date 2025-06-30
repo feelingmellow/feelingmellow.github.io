@@ -442,3 +442,20 @@ h1 {
     position: relative;
     z-index: 100;
 }
+
+    <div class="social-media">
+    <a href="https://www.instagram.com/mellowelpaso" target="_blank" class="social-icon" title="Follow us on Instagram">
+        <i class="fab fa-instagram"></i>
+    </a>
+    <marquee behavior="scroll" direction="left" scrollamount="3" class="social-text">follow @mellowelpaso</marquee>
+</div>
+<style>
+/* Ensure the social media icon is clickable and on top */
+.social-media, .social-icon {
+    pointer-events: auto !important;
+}
+.social-media {
+    position: relative;
+    z-index: 100;
+}
+</style>
