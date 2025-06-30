@@ -8,6 +8,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
         .blink {
             color: black;
             position: relative;
@@ -23,26 +33,6 @@
             pointer-events: none;
             cursor: default;
         }
-        .lowered-title {
-            position: relative;
-            top: 35%;
-        }
-        .menu-button {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 24px;
-            background: #ffeca4;
-            color: #333;
-            text-decoration: none;
-            border-radius: 12px;
-            font-family: 'Amatic SC', cursive;
-            font-size: 1.5em;
-            box-shadow: 2px 4px 8px rgba(0,0,0,0.12);
-            transition: background 0.2s;
-        }
-        .menu-button:hover {
-            background: #ffe066;
-        }
         .menu-button-container {
             position: absolute;
             left: 50%;
@@ -53,27 +43,35 @@
             z-index: 2;
             display: none; /* Hide the menu button */
         }
-        html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            min-height: 100vh;
-            position: relative;
-        }
+        /* Use flex to center content vertically */
         .content {
             position: relative;
             z-index: 2;
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
-        /* Place social-media fixed at bottom, on top of backgrounds, NOT pushing content down */
+        /* Remove the previous .lowered-title top shift! */
+        .lowered-title {
+            /* position: relative; */
+            /* top: 35%; */
+            margin-bottom: 16px;
+        }
+        .planet-system {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        /* Social media bar fixed at bottom */
         .social-media {
             position: fixed;
             left: 0;
             bottom: 0;
             width: 100%;
             z-index: 10000;
-            background: rgba(255,255,255,0.7); /* optional: slight background for readability */
+            background: rgba(255,255,255,0.7);
             pointer-events: auto;
             display: flex;
             align-items: center;
@@ -95,10 +93,8 @@
             background: none;
             border: none;
         }
-        /* Lower all other overlays so social-media is on top */
         .landscape,
-        .dust-container,
-        .content {
+        .dust-container {
             z-index: 1 !important;
             position: relative !important;
         }
@@ -128,11 +124,9 @@
             </a>
         </div>
     </div>
-    <!-- Menu button hidden -->
     <div class="menu-button-container">
         <a href="menu.html" class="menu-button">Menu</a>
     </div>
-    <!-- Social media bar -->
     <div class="social-media">
         <a href="https://www.instagram.com/mellowelpaso" target="_blank" class="social-icon" title="Follow us on Instagram">
             <i class="fab fa-instagram"></i>
