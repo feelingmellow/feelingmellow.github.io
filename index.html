@@ -1,82 +1,445 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Have A Mellow Day</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <style>
-        .blink {
-            color: black;
-            position: relative;
-            top: -15%;
-        }
-        .logo-image {
-            background: transparent;
-        }
-        #contact, #art, #plants, #clock, #events, #yoga {
-            display: none;
-        }
-        .social-icon {
-            cursor: pointer;
-        }
-    </style>
-</head>
-<body>
-    <div class="landscape">
-        <div class="sky"></div>
-        <div class="sun"></div>
-        <div class="cloud cloud1"></div>
-        <div class="cloud cloud2"></div>
-        <div class="mountains">
-            <div class="franklin-mountains"></div>
-            <a href="star.html" class="star"></a>
-        </div>
-        <div class="desert">
-            <a href="cactus.html" class="cactus"></a>
-            <a href="cactus.html" class="cactus"></a>
-        </div>
-    </div>
-    <div class="dust-container"></div>
-    <div class="content">
-        <h1>Have A Mellow Day</h1>
-        <div class="planet-system">
-            <a href="about.html" class="logo-space">
-                <img src="themoon.png" alt="Mellow Logo" class="logo-image">
-            </a>
-            <a href="menu.html" class="nav-button" id="menu">
-                <span class="nav-icon">🍹</span>Menu
-            </a>
-            <a href="library.html" class="nav-button" id="library">
-                <span class="nav-icon">📚</span>Library
-            </a>
-        </div>
-    </div>
-    <div class="social-media">
-        <!-- Instagram icon is clickable and visible -->
-        <a href="https://www.instagram.com/haveamellow.day" target="_blank" class="social-icon" aria-label="Instagram">
-            <i class="fab fa-instagram"></i>
-        </a>
-        <marquee behavior="scroll" direction="left" scrollamount="3" class="social-text">
-            follow us @haveamellow.day
-        </marquee>
-    </div>
-    <p class="blink">A New Kind of Happy Hour</p>
-    <script>
-        function createDustParticles() {
-            const container = document.querySelector('.dust-container');
-            for (let i = 0; i < 50; i++) {
-                const particle = document.createElement('div');
-                particle.classList.add('dust-particle');
-                particle.style.left = Math.random() * 100 + 'vw';
-                particle.style.animationDelay = Math.random() * 8 + 's';
-                particle.style.opacity = Math.random() * 0.5 + 0.1;
-                container.appendChild(particle);
-            }
-        }
-        createDustParticles();
-    </script>
-</body>
-</html>
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Amatic SC', cursive;
+    color: #8B4513;
+    text-align: center;
+    overflow-x: hidden;
+    background: #87CEEB;
+}
+
+.landscape {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+}
+
+.sky {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 70vh;
+    background: linear-gradient(to bottom, #87CEEB, #E0F6FF);
+}
+
+.sun {
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 80px;
+    background: #FFD700;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+}
+.sun::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: repeating-conic-gradient(from 0deg, transparent 0deg 15deg, #FFD700 15deg 20deg);
+}
+
+.cloud {
+    position: absolute;
+    background: white;
+    border-radius: 20px;
+    opacity: 0.8;
+}
+.cloud::before,
+.cloud::after {
+    content: '';
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+}
+.cloud1 {
+    width: 100px;
+    height: 30px;
+    top: 80px;
+    left: 20%;
+}
+.cloud1::before {
+    width: 50px;
+    height: 50px;
+    top: -25px;
+    left: 10px;
+}
+.cloud1::after {
+    width: 70px;
+    height: 70px;
+    top: -35px;
+    right: 10px;
+}
+.cloud2 {
+    width: 140px;
+    height: 40px;
+    top: 60px;
+    right: 20%;
+}
+.cloud2::before {
+    width: 70px;
+    height: 70px;
+    top: -35px;
+    left: 15px;
+}
+.cloud2::after {
+    width: 90px;
+    height: 90px;
+    top: -45px;
+    right: 15px;
+}
+
+/* Mountains: corrected for mobile and desktop */
+.mountains {
+    position: absolute;
+    bottom: 15vh;
+    left: 0;
+    width: 100vw;
+    height: 22vh;
+    z-index: 1;
+    pointer-events: none;
+}
+.franklin-mountains {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    background: linear-gradient(to bottom, #8B4513, #A0522D);
+    clip-path: polygon(
+        0% 100%,    /* Start at bottom-left */
+        0% 80%,     /* Base of first mountain */
+        30% 10%,    /* Peak of first (widest) mountain */
+        50% 20%,    /* Valley between first and second mountains */
+        80% 15%,    /* Peak of second mountain */
+        100% 20%,   /* Valley between second and third mountains */
+        90% 45%,    /* Peak of third mountain - fixed from 200% */
+        100% 100%   /* End at bottom-right */
+    );
+}
+
+/* Responsive mountains for mobile */
+@media (max-width: 600px) {
+    .mountains {
+        height: 30vh;
+        bottom: 12vh;
+    }
+    .franklin-mountains {
+        clip-path: polygon(
+            0% 100%,
+            0% 80%,
+            30% 15%,
+            50% 30%,
+            80% 18%,
+            100% 35%,
+            90% 60%,
+            100% 100%
+        );
+    }
+}
+
+.star {
+    position: absolute;
+    left: 17%;
+    bottom: 40%;
+    width: 100px;
+    height: 60px;
+    background: #FFD700;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    z-index: 2;
+    cursor: pointer;
+}
+
+.desert {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 20vh;
+    background: linear-gradient(to bottom, #D2691E, #F4A460);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.cactus {
+    position: absolute;
+    bottom: 18%;
+    width: 20px;
+    height: 60px;
+    background: #006400;
+    cursor: pointer;
+}
+.cactus::before, .cactus::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 20px;
+    background: #006400;
+}
+.cactus::before {
+    top: 15px;
+    left: -10px;
+}
+.cactus::after {
+    top: 30px;
+    right: -10px;
+}
+.cactus:nth-child(1) { left: 15%; }
+.cactus:nth-child(2) { left: 85%; }
+
+.dust-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 100px;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 20;
+}
+.dust-particle {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: rgba(210, 180, 140, 0.3);
+    border-radius: 50%;
+    animation: dust-animation 8s infinite linear;
+}
+@keyframes dust-animation {
+    0% {
+        transform: translateY(100px) translateX(-10px);
+        opacity: 0;
+    }
+    20% {
+        opacity: 0.5;
+    }
+    80% {
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(-20px) translateX(calc(100vw + 10px));
+        opacity: 0;
+    }
+}
+
+/* Main content styles */
+.content {
+    max-width: 100vw;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    background: rgba(255,255,255,0.85);
+    border-radius: 12px;
+    box-shadow: 0 2px 14px rgba(44,36,31,0.08);
+    margin-top: 3vh;
+}
+
+h1, .lowered-title {
+    font-size: 72px;
+    color: #FFA500;
+    text-shadow: 2px 2px #8B4513;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.blink {
+    color: #FFA500;
+    font-size: 36px;
+    margin-bottom: 20px;
+    animation: blink-animation 1s steps(5, start) infinite;
+    text-align: center;
+}
+@keyframes blink-animation {
+    to { visibility: hidden; }
+}
+
+.planet-system {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
+}
+
+.logo-space {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 160px;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.logo-image {
+    width: 100%;
+    height: auto;
+    max-width: 160px;
+    border-radius: 50%;
+    background: #d8f3dc;
+    box-shadow: 0 2px 12px #b7e4c7a0;
+    display: block;
+}
+
+/* Social Media */
+.social-media {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100vw;
+    max-width: 300px;
+    z-index: 100;
+}
+
+.social-icon {
+    color: #000000;
+    font-size: 28px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    flex-shrink: 0;
+}
+.social-icon:hover {
+    color: #FFA500;
+}
+.social-text {
+    color: #000000;
+    font-size: 24px;
+    font-family: 'Amatic SC', cursive;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+    width: 100%;
+}
+
+/* Hide all icons except Library and Menu (if needed) */
+#contact, #art, #plants, #clock, #events, #yoga {
+    display: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .planet-system {
+        width: 320px;
+        height: 320px;
+    }
+    .logo-space {
+        width: 120px;
+        height: 120px;
+    }
+    .logo-image {
+        max-width: 120px;
+    }
+    h1, .lowered-title {
+        font-size: 48px;
+    }
+    .blink {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 600px) {
+    .sun {
+        top: 30px;
+        width: 60px;
+        height: 60px;
+    }
+    .cloud1 {
+        width: 80px;
+        height: 24px;
+        top: 60px;
+        left: 10%;
+    }
+    .cloud1::before {
+        width: 40px;
+        height: 40px;
+        top: -20px;
+        left: 8px;
+    }
+    .cloud1::after {
+        width: 56px;
+        height: 56px;
+        top: -28px;
+        right: 8px;
+    }
+    .cloud2 {
+        width: 112px;
+        height: 32px;
+        top: 45px;
+        right: 10%;
+    }
+    .cloud2::before {
+        width: 56px;
+        height: 56px;
+        top: -28px;
+        left: 12px;
+    }
+    .cloud2::after {
+        width: 72px;
+        height: 72px;
+        top: -36px;
+        right: 12px;
+    }
+    .mountains {
+        height: 30vh;
+        bottom: 12vh;
+    }
+    .franklin-mountains {
+        clip-path: polygon(
+            0% 100%,
+            0% 80%,
+            30% 15%,
+            50% 30%,
+            80% 18%,
+            100% 35%,
+            90% 60%,
+            100% 100%
+        );
+    }
+    h1, .lowered-title {
+        font-size: 36px;
+    }
+    .blink {
+        font-size: 20px;
+    }
+    .planet-system {
+        width: 180px;
+        height: 180px;
+    }
+    .logo-space {
+        width: 80px;
+        height: 80px;
+    }
+    .logo-image {
+        max-width: 80px;
+    }
+    .content {
+        padding: 10px;
+        margin-top: 1vh;
+    }
+    .social-media {
+        max-width: 90vw;
+        left: 5vw;
+    }
+}
