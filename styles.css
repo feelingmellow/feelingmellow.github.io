@@ -108,7 +108,7 @@ body {
     position: absolute;
     bottom: 15vh;
     left: 0;
-    width: 100vw;
+    width: 200vw;
     height: 22vh;
     z-index: 1;
     pointer-events: none;
