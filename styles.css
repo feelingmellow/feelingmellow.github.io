@@ -109,38 +109,29 @@ body {
 
 .mountains {
     position: absolute;
-    bottom: 10%;
+    bottom: 15%;
     left: 0;
-    width: 100vw;
-    height: 55%;
+    width: 100%;
+    height: 40%;
     z-index: 1;
 }
 
-/* WIDER and TALLER peaks for Franklin Mountains */
 .franklin-mountains {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 120vw;
-    height: 120%;
+    width: 100%;
+    height: 100%;
     background: linear-gradient(to bottom, #8B4513, #A0522D);
     clip-path: polygon(
-        0% 100%,      /* Start at bottom-left */
-        0% 60%,       /* Base of first mountain */
-        10% 40%,      /* Steep slope up */
-        18% 10%,      /* Tall Peak 1 */
-        23% 30%,      /* Down from peak */
-        28% 22%,      /* Up to Peak 2 */
-        35% 12%,      /* Tall Peak 2 */
-        43% 32%,      /* Down from peak */
-        50% 18%,      /* Up to Peak 3 */
-        58% 36%,      /* Down from peak */
-        62% 28%,      /* Up to Peak 4 */
-        70% 14%,      /* Tallest Peak 4 */
-        79% 38%,      /* Down from peak */
-        87% 20%,      /* Up to final peak */
-        100% 60%,     /* Back down to base */
-        100% 100%     /* End at bottom-right */
+        0% 100%,    /* Start at bottom-left */
+        0% 80%,     /* Base of first mountain */
+        30% 10%,    /* Peak of first (widest) mountain */
+        50% 20%,    /* Valley between first and second mountains */
+        80% 15%,    /* Peak of second mountain */
+        100% 20%,    /* Valley between second and third mountains */
+        200% 45%,    /* Peak of third mountain */
+        100% 100%   /* End at bottom-right */
     );
 }
 
@@ -360,6 +351,7 @@ h1 {
     width: 100%;
 }
 
+
 @media (max-width: 768px) {
     .sun {
         top: 30px;
@@ -437,5 +429,35 @@ h1 {
         font-size: 18px;
     }
 
-    .nav-icon {
-        font-size:
+/* Force social-media to be on top and interactive */
+.social-media {
+    position: relative !important;
+    z-index: 9999 !important;
+    pointer-events: auto !important;
+}
+
+/* Make sure the link itself is clickable */
+.social-icon {
+    pointer-events: auto !important;
+    cursor: pointer;
+}
+
+/* If there are absolutely positioned overlays, make them lower */
+.landscape,
+.dust-container,
+.content {
+    z-index: 1 !important;
+    position: relative !important;
+}
+
+.social-icon {
+    pointer-events: auto !important;
+    cursor: pointer;
+    z-index: 10;
+    position: relative;
+}
+.social-media {
+    pointer-events: auto !important;
+    z-index: 10;
+    position: relative;
+}
