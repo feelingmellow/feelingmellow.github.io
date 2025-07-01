@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mellow Menu</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffa933;
+      font-family: 'Comic Sans MS', 'Comic Sans', cursive, sans-serif;
+      text-align: center;
+    }
+    .menu-bg {
+      width: 100vw;
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+    .menu-links {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      max-width: 100%;
+      height: 100%;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .menu-link {
+      position: absolute;
+      display: block;
+      /* clickable */
+      pointer-events: auto;
+      /* visually invisible */
+      background: rgba(255,255,255,0.01);
+      border-radius: 8px;
+      transition: background 0.2s;
+    }
+    .menu-link:hover, .menu-link:focus {
+      background: rgba(255,255,0,0.2);
+      outline: 2px solid #fff70088;
+    }
+    /* Responsive scaling */
+    @media (max-width: 850px) {
+      .menu-bg, .menu-links { width: 100vw; }
+    }
+  </style>
+</head>
+<body>
+  <div style="position:relative; width:768px; max-width:100vw; margin:0 auto;">
+    <img src="day1.png" class="menu-bg" alt="Mellow Kava Menu" width="768" height="995" style="width:100%;height:auto;">
+    <!-- Clickable overlay links -->
+    <div class="menu-links" style="width:100%;height:100%;pointer-events:none;">
+      <!-- first timer -->
+      <a href="https://pay.mellowelpaso.com/firsttime" class="menu-link"
+         title="Order First Timer"
+         style="left:117px; top:172px; width:222px; height:38px;" tabindex="1"></a>
+      <!-- kavajuama -->
+      <a href="https://pay.mellowelpaso.com/kava" class="menu-link"
+         title="Order Kavajuama"
+         style="left:117px; top:213px; width:222px; height:38px;" tabindex="2"></a>
+      <!-- holy hibiscus (not displayed but included for future) -->
+      <a href="https://pay.mellowelpaso.com/holyhibiscus" class="menu-link"
+         title="Order Holy Hibiscus"
+         style="left:0;top:0;width:1px;height:1px;display:none;"></a>
+      <!-- lavender haze (not displayed but included for future) -->
+      <a href="https://pay.mellowelpaso.com/lavenderhaze" class="menu-link"
+         title="Order Lavender Haze"
+         style="left:0;top:0;width:1px;height:1px;display:none;"></a>
+      <!-- java con kava (bottom right) -->
+      <a href="https://pay.mellowelpaso.com/javaconkava" class="menu-link"
+         title="Order Java con Kava"
+         style="left:120px; top:862px; width:320px; height:42px;" tabindex="3"></a>
+      <!-- sun city sunset (not displayed but included for future) -->
+      <a href="https://pay.mellowelpaso.com/suncitysunset" class="menu-link"
+         title="Order Sun City Sunset"
+         style="left:0;top:0;width:1px;height:1px;display:none;"></a>
+      <!-- nopal no problem (not displayed but included for future) -->
+      <a href="https://pay.mellowelpaso.com/nopalnoproblem" class="menu-link"
+         title="Order Nopal No Problem"
+         style="left:0;top:0;width:1px;height:1px;display:none;"></a>
+      <!-- pina calmada -->
+      <a href="https://pay.mellowelpaso.com/pinacalmada" class="menu-link"
+         title="Order Pina Calmada"
+         style="left:120px; top:779px; width:330px; height:44px;" tabindex="4"></a>
+      <!-- la kavachata -->
+      <a href="https://pay.mellowelpaso.com/lakavachata" class="menu-link"
+         title="Order La Kavachata"
+         style="left:120px; top:710px; width:330px; height:44px;" tabindex="5"></a>
+    </div>
+  </div>
+</body>
+</html>
