@@ -71,12 +71,14 @@ body {
     top: 80px;
     left: 20%;
 }
+
 .cloud1::before {
     width: 50px;
     height: 50px;
     top: -25px;
     left: 10px;
 }
+
 .cloud1::after {
     width: 70px;
     height: 70px;
@@ -90,12 +92,14 @@ body {
     top: 60px;
     right: 20%;
 }
+
 .cloud2::before {
     width: 70px;
     height: 70px;
     top: -35px;
     left: 15px;
 }
+
 .cloud2::after {
     width: 90px;
     height: 90px;
@@ -103,21 +107,20 @@ body {
     right: 15px;
 }
 
-/* Mountains: corrected for mobile and desktop */
 .mountains {
     position: absolute;
-    bottom: 15vh;
+    bottom: 15%;
     left: 0;
-    width: 100vw;
-    height: 22vh;
+    width: 100%;
+    height: 40%;
     z-index: 1;
-    pointer-events: none;
 }
+
 .franklin-mountains {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 100vw;
+    width: 100%;
     height: 100%;
     background: linear-gradient(to bottom, #8B4513, #A0522D);
     clip-path: polygon(
@@ -126,38 +129,18 @@ body {
         30% 10%,    /* Peak of first (widest) mountain */
         50% 20%,    /* Valley between first and second mountains */
         80% 15%,    /* Peak of second mountain */
-        100% 20%,   /* Valley between second and third mountains */
-        90% 45%,    /* Peak of third mountain - fixed from 200% */
+        100% 20%,    /* Valley between second and third mountains */
+        200% 45%,    /* Peak of third mountain */
         100% 100%   /* End at bottom-right */
     );
-}
-
-/* Responsive mountains for mobile */
-@media (max-width: 600px) {
-    .mountains {
-        height: 30vh;
-        bottom: 12vh;
-    }
-    .franklin-mountains {
-        clip-path: polygon(
-            0% 100%,
-            0% 80%,
-            30% 15%,
-            50% 30%,
-            80% 18%,
-            100% 35%,
-            90% 60%,
-            100% 100%
-        );
-    }
 }
 
 .star {
     position: absolute;
     left: 17%;
-    bottom: 40%;
-    width: 100px;
-    height: 60px;
+    bottom: 40%; /* Moved higher */
+    width: 100px; /* Increased size */
+    height: 60px; /* Increased size */
     background: #FFD700;
     clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
     z-index: 2;
@@ -168,11 +151,9 @@ body {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 100vw;
-    height: 20vh;
+    width: 100%;
+    height: 20%;
     background: linear-gradient(to bottom, #D2691E, #F4A460);
-    z-index: 2;
-    pointer-events: none;
 }
 
 .cactus {
@@ -183,6 +164,7 @@ body {
     background: #006400;
     cursor: pointer;
 }
+
 .cactus::before, .cactus::after {
     content: '';
     position: absolute;
@@ -190,14 +172,17 @@ body {
     height: 20px;
     background: #006400;
 }
+
 .cactus::before {
     top: 15px;
     left: -10px;
 }
+
 .cactus::after {
     top: 30px;
     right: -10px;
 }
+
 .cactus:nth-child(1) { left: 15%; }
 .cactus:nth-child(2) { left: 85%; }
 
@@ -205,12 +190,12 @@ body {
     position: fixed;
     bottom: 0;
     left: 0;
-    width: 100vw;
+    width: 100%;
     height: 100px;
     overflow: hidden;
     pointer-events: none;
-    z-index: 20;
 }
+
 .dust-particle {
     position: absolute;
     width: 3px;
@@ -219,6 +204,7 @@ body {
     border-radius: 50%;
     animation: dust-animation 8s infinite linear;
 }
+
 @keyframes dust-animation {
     0% {
         transform: translateY(100px) translateX(-10px);
@@ -236,25 +222,20 @@ body {
     }
 }
 
-/* Main content styles */
 .content {
-    max-width: 100vw;
+    max-width: 100%;
     margin: 0 auto;
     padding: 20px;
     position: relative;
-    z-index: 10;
+    z-index: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     min-height: 100vh;
-    background: transparent;
-    border-radius: 0;
-    box-shadow: none;
-    margin-top: 3vh;
 }
 
-h1, .lowered-title {
+h1 {
     font-size: 72px;
     color: #FFA500;
     text-shadow: 2px 2px #8B4513;
@@ -269,6 +250,7 @@ h1, .lowered-title {
     animation: blink-animation 1s steps(5, start) infinite;
     text-align: center;
 }
+
 @keyframes blink-animation {
     to { visibility: hidden; }
 }
@@ -292,20 +274,51 @@ h1, .lowered-title {
     justify-content: center;
     background-color: transparent;
     z-index: 2;
-    pointer-events: none;
+    cursor: pointer;
 }
 
 .logo-image {
     width: 100%;
     height: auto;
     max-width: 160px;
-    border-radius: 50%;
-    background: #d8f3dc;
-    box-shadow: 0 2px 12px #b7e4c7a0;
-    display: block;
 }
 
-/* Social Media */
+.nav-button {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px black;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.nav-button:hover {
+    transform: scale(1.1);
+}
+
+.nav-icon {
+    font-size: 32px;
+    margin-bottom: 4px;
+}
+
+#contact { top: 50%; left: -10%; transform: translateY(-50%); }
+#art { top: 10%; left: 10%; }
+#menu { top: -10%; left: 50%; transform: translateX(-50%); }
+#research { top: 10%; right: 10%; }
+#plants { top: 50%; right: -10%; transform: translateY(-50%); }
+#clock { bottom: 10%; right: 10%; }
+#events { bottom: -10%; left: 50%; transform: translateX(-50%); }
+#yoga { bottom: 10%; left: 10%; }
+
 .social-media {
     position: fixed;
     bottom: 10px;
@@ -313,10 +326,8 @@ h1, .lowered-title {
     display: flex;
     align-items: center;
     gap: 10px;
-    width: 100vw;
+    width: 100%;
     max-width: 300px;
-    z-index: 100 !important;
-    pointer-events: auto;
 }
 
 .social-icon {
@@ -325,13 +336,12 @@ h1, .lowered-title {
     text-decoration: none;
     transition: color 0.3s ease;
     flex-shrink: 0;
-    cursor: pointer;
-    pointer-events: auto;
-    z-index: 101;
 }
+
 .social-icon:hover {
     color: #FFA500;
 }
+
 .social-text {
     color: #000000;
     font-size: 24px;
@@ -341,113 +351,82 @@ h1, .lowered-title {
     width: 100%;
 }
 
-/* Hide all icons except Library and Menu (if needed) */
-#contact, #art, #plants, #clock, #events, #yoga {
-    display: none;
-}
-
-/* Responsive adjustments */
-@media (max-width: 900px) {
-    .planet-system {
-        width: 320px;
-        height: 320px;
-    }
-    .logo-space {
-        width: 120px;
-        height: 120px;
-    }
-    .logo-image {
-        max-width: 120px;
-    }
-    h1, .lowered-title {
-        font-size: 48px;
-    }
-    .blink {
-        font-size: 28px;
-    }
-}
-
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .sun {
         top: 30px;
         width: 60px;
         height: 60px;
     }
+
     .cloud1 {
         width: 80px;
         height: 24px;
         top: 60px;
         left: 10%;
     }
+
     .cloud1::before {
         width: 40px;
         height: 40px;
         top: -20px;
         left: 8px;
     }
+
     .cloud1::after {
         width: 56px;
         height: 56px;
         top: -28px;
         right: 8px;
     }
+
     .cloud2 {
         width: 112px;
         height: 32px;
         top: 45px;
         right: 10%;
     }
+
     .cloud2::before {
         width: 56px;
         height: 56px;
         top: -28px;
         left: 12px;
     }
+
     .cloud2::after {
         width: 72px;
         height: 72px;
         top: -36px;
         right: 12px;
     }
-    .mountains {
-        height: 30vh;
-        bottom: 12vh;
+
+    h1 {
+        font-size: 54px;
     }
-    .franklin-mountains {
-        clip-path: polygon(
-            0% 100%,
-            0% 80%,
-            30% 15%,
-            50% 30%,
-            80% 18%,
-            100% 35%,
-            90% 60%,
-            100% 100%
-        );
-    }
-    h1, .lowered-title {
-        font-size: 36px;
-    }
+
     .blink {
-        font-size: 20px;
+        font-size: 28px;
     }
+
     .planet-system {
-        width: 180px;
-        height: 180px;
+        width: 340px;
+        height: 340px;
     }
+
     .logo-space {
-        width: 80px;
-        height: 80px;
+        width: 140px;
+        height: 140px;
     }
+
     .logo-image {
-        max-width: 80px;
+        max-width: 140px;
     }
-    .content {
-        padding: 10px;
-        margin-top: 1vh;
+
+    .nav-button {
+        width: 60px;
+        height: 60px;
+        font-size: 18px;
     }
-    .social-media {
-        max-width: 90vw;
-        left: 5vw;
-    }
-}
+
+    .nav-icon {
+        font-size:
