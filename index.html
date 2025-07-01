@@ -8,16 +8,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
-      .content {
-        border-radius: 12px;
-        box-shadow: 0 2px 14px rgba(44,36,31,0.08);
-        background: rgba(255,255,255,0.85);
-        margin-top: 3vh;
-      }
-      /* Ensure .landscape is behind everything */
-      .landscape { z-index: 0 !important; }
-      /* Show .content above .landscape */
-      .content { z-index: 2 !important; }
+        .blink {
+            color: black;
+            position: relative;
+            top: -15%;
+        }
+        .logo-image {
+            background: transparent;
+        }
+        #contact, #art, #plants, #clock, #events, #yoga {
+            display: none;
+        }
+        .social-icon {
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -37,19 +41,29 @@
     </div>
     <div class="dust-container"></div>
     <div class="content">
-        <h1 class="lowered-title">Have A Mellow Day</h1>
+        <h1>Have A Mellow Day</h1>
         <div class="planet-system">
             <a href="about.html" class="logo-space">
-                <img src="themoon.png" alt="Mellow Logo" class="logo-image"
-                  onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/9/99/Black_circle.svg';">
+                <img src="themoon.png" alt="Mellow Logo" class="logo-image">
+            </a>
+            <a href="menu.html" class="nav-button" id="menu">
+                <span class="nav-icon">🍹</span>Menu
+            </a>
+            <a href="library.html" class="nav-button" id="library">
+                <span class="nav-icon">📚</span>Library
             </a>
         </div>
     </div>
     <div class="social-media">
-        <a href="https://www.instagram.com/mellowelpaso" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
-        <marquee behavior="scroll" direction="left" scrollamount="3" class="social-text">follow @mellowelpaso</marquee>
+        <!-- Instagram icon is clickable and visible -->
+        <a href="https://www.instagram.com/haveamellow.day" target="_blank" class="social-icon" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <marquee behavior="scroll" direction="left" scrollamount="3" class="social-text">
+            follow us @haveamellow.day
+        </marquee>
     </div>
-    <p class="blink"></p>
+    <p class="blink">A New Kind of Happy Hour</p>
     <script>
         function createDustParticles() {
             const container = document.querySelector('.dust-container');
