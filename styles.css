@@ -123,7 +123,7 @@ body {
     clip-path: polygon(
         0% 100%,    /* Start at bottom-left */
         0% 80%,     /* Base of first mountain */
-        80% 10%,    /* Peak of first (widest) mountain */
+        80% 50%,    /* Peak of first (widest) mountain */
         50% 20%,    /* Valley between first and second mountains */
         80% 15%,    /* Peak of second mountain */
         100% 20%,   /* Valley between second and third mountains */
