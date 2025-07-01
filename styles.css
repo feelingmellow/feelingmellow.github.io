@@ -14,17 +14,17 @@ body {
     position: fixed;
     bottom: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
 }
 
 .sky {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 70%;
+    width: 100vw;
+    height: 70vh;
     background: linear-gradient(to bottom, #87CEEB, #E0F6FF);
 }
 
@@ -39,7 +39,6 @@ body {
     border-radius: 50%;
     box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
 }
-
 .sun::before {
     content: '';
     position: absolute;
@@ -56,7 +55,6 @@ body {
     border-radius: 20px;
     opacity: 0.8;
 }
-
 .cloud::before,
 .cloud::after {
     content: '';
@@ -64,7 +62,6 @@ body {
     background: white;
     border-radius: 50%;
 }
-
 .cloud1 {
     width: 100px;
     height: 30px;
@@ -83,7 +80,6 @@ body {
     top: -35px;
     right: 10px;
 }
-
 .cloud2 {
     width: 140px;
     height: 40px;
@@ -103,76 +99,50 @@ body {
     right: 15px;
 }
 
-/* Mountains: fill entire screen width, always reach right edge, and are taller vertically */
+/* Mountains: corrected for mobile and desktop */
 .mountains {
     position: absolute;
     bottom: 15vh;
     left: 0;
     width: 100vw;
-    min-width: 100vw;
-    max-width: 100vw;
-    height: 40vh; /* Increased height for bigger mountains vertically */
+    height: 22vh;
     z-index: 1;
     pointer-events: none;
-    overflow-x: hidden;
 }
 .franklin-mountains {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100vw;
-    min-width: 100vw;
-    max-width: 100vw;
     height: 100%;
     background: linear-gradient(to bottom, #8B4513, #A0522D);
     clip-path: polygon(
-        0% 100%,     /* Start at bottom-left */
-        0% 60%,      /* Base of first mountain */
-        10% 25%,     /* Slope up (was 60%) */
-        18% 0%,      /* Very Tall peak 1 (was 20%) */
-        23% 35%,     /* Down from peak (was 50%) */
-        31% 15%,     /* Up to peak 2 (was 35%) */
-        38% 0%,      /* Very Tall peak 2 (was 10%) */
-        45% 28%,     /* Down from peak (was 38%) */
-        51% 10%,     /* Up to peak 3 (was 25%) */
-        58% 30%,     /* Down from peak (was 44%) */
-        65% 14%,     /* Up to peak 4 (was 27%) */
-        74% 0%,      /* Tallest peak 4 (was 7%) */
-        82% 26%,     /* Down from peak (was 38%) */
-        90% 10%,     /* Up to final peak (was 20%) */
-        96% 18%,     /* Down from final peak (was 30%) */
-        100% 0%,     /* Far right tall peak, ensures right edge is filled (was 10%) */
-        100% 100%    /* End at bottom-right */
+        0% 100%,    /* Start at bottom-left */
+        0% 80%,     /* Base of first mountain */
+        30% 10%,    /* Peak of first (widest) mountain */
+        50% 20%,    /* Valley between first and second mountains */
+        80% 15%,    /* Peak of second mountain */
+        100% 20%,   /* Valley between second and third mountains */
+        90% 45%,    /* Peak of third mountain - fixed from 200% */
+        100% 100%   /* End at bottom-right */
     );
 }
 
 /* Responsive mountains for mobile */
 @media (max-width: 600px) {
     .mountains {
-        height: 60vh; /* Increased height for taller mountains on mobile */
+        height: 30vh;
         bottom: 12vh;
-        width: 100vw;
-        min-width: 100vw;
-        max-width: 100vw;
     }
     .franklin-mountains {
-        width: 100vw;
-        min-width: 100vw;
-        max-width: 100vw;
         clip-path: polygon(
             0% 100%,
             0% 80%,
-            10% 38%,
-            20% 9%,
-            30% 25%,
-            42% 0%,
-            52% 23%,
-            60% 8%,
-            70% 32%,
-            80% 6%,
-            90% 28%,
-            98% 12%,
-            100% 0%,
+            30% 15%,
+            50% 30%,
+            80% 18%,
+            100% 35%,
+            90% 60%,
             100% 100%
         );
     }
@@ -274,9 +244,9 @@ body {
     align-items: center;
     justify-content: flex-start;
     min-height: 100vh;
-    background: transparent;
-    border-radius: 0;
-    box-shadow: none;
+    background: rgba(255,255,255,0.85);
+    border-radius: 12px;
+    box-shadow: 0 2px 14px rgba(44,36,31,0.08);
     margin-top: 3vh;
 }
 
@@ -341,8 +311,7 @@ h1, .lowered-title {
     gap: 10px;
     width: 100vw;
     max-width: 300px;
-    z-index: 100 !important;
-    pointer-events: auto;
+    z-index: 100;
 }
 
 .social-icon {
@@ -351,9 +320,6 @@ h1, .lowered-title {
     text-decoration: none;
     transition: color 0.3s ease;
     flex-shrink: 0;
-    cursor: pointer;
-    pointer-events: auto;
-    z-index: 101;
 }
 .social-icon:hover {
     color: #FFA500;
@@ -367,13 +333,9 @@ h1, .lowered-title {
     width: 100%;
 }
 
+/* Hide all icons except Library and Menu (if needed) */
 #contact, #art, #plants, #clock, #events, #yoga {
     display: none;
-}
-
-/* Hide menu and library button */
-#menu, #library {
-    display: none !important;
 }
 
 /* Responsive adjustments */
@@ -440,31 +402,44 @@ h1, .lowered-title {
         right: 12px;
     }
     .mountains {
-        height: 60vh;
+        height: 30vh;
         bottom: 12vh;
-        width: 100vw;
-        min-width: 100vw;
-        max-width: 100vw;
     }
     .franklin-mountains {
-        width: 100vw;
-        min-width: 100vw;
-        max-width: 100vw;
         clip-path: polygon(
             0% 100%,
             0% 80%,
-            10% 38%,
-            20% 9%,
-            30% 25%,
-            42% 0%,
-            52% 23%,
-            60% 8%,
-            70% 32%,
-            80% 6%,
-            90% 28%,
-            98% 12%,
-            100% 0%,
+            30% 15%,
+            50% 30%,
+            80% 18%,
+            100% 35%,
+            90% 60%,
             100% 100%
         );
+    }
+    h1, .lowered-title {
+        font-size: 36px;
+    }
+    .blink {
+        font-size: 20px;
+    }
+    .planet-system {
+        width: 180px;
+        height: 180px;
+    }
+    .logo-space {
+        width: 80px;
+        height: 80px;
+    }
+    .logo-image {
+        max-width: 80px;
+    }
+    .content {
+        padding: 10px;
+        margin-top: 1vh;
+    }
+    .social-media {
+        max-width: 90vw;
+        left: 5vw;
     }
 }
