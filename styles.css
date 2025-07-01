@@ -103,32 +103,47 @@ body {
     right: 15px;
 }
 
-/* Mountains: corrected for mobile and desktop */
+/* Mountains: fill entire screen width, always reach right edge */
 .mountains {
     position: absolute;
     bottom: 15vh;
     left: 0;
     width: 100vw;
+    min-width: 100vw;
+    max-width: 100vw;
     height: 22vh;
     z-index: 1;
     pointer-events: none;
+    overflow-x: hidden;
 }
 .franklin-mountains {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100vw;
+    min-width: 100vw;
+    max-width: 100vw;
     height: 100%;
     background: linear-gradient(to bottom, #8B4513, #A0522D);
+    /* Extended the rightmost peaks to fully fill the right edge */
     clip-path: polygon(
-        0% 100%,    /* Start at bottom-left */
-        0% 80%,     /* Base of first mountain */
-        30% 10%,    /* Peak of first (widest) mountain */
-        50% 20%,    /* Valley between first and second mountains */
-        80% 15%,    /* Peak of second mountain */
-        100% 20%,   /* Valley between second and third mountains */
-        90% 45%,    /* Peak of third mountain - fixed from 200% */
-        100% 100%   /* End at bottom-right */
+        0% 100%,     /* Start at bottom-left */
+        0% 80%,      /* Base of first mountain */
+        10% 60%,     /* Slope up */
+        18% 20%,     /* Tall peak 1 */
+        23% 50%,     /* Down from peak */
+        31% 35%,     /* Up to peak 2 */
+        38% 10%,     /* Tall peak 2 */
+        45% 38%,     /* Down from peak */
+        51% 25%,     /* Up to peak 3 */
+        58% 44%,     /* Down from peak */
+        65% 27%,     /* Up to peak 4 */
+        74% 7%,      /* Tallest peak 4 */
+        82% 38%,     /* Down from peak */
+        90% 20%,     /* Up to final peak */
+        96% 30%,     /* Down from final peak */
+        100% 10%,    /* Far right tall peak, ensures right edge is filled */
+        100% 100%    /* End at bottom-right */
     );
 }
 
@@ -137,16 +152,29 @@ body {
     .mountains {
         height: 30vh;
         bottom: 12vh;
+        width: 100vw;
+        min-width: 100vw;
+        max-width: 100vw;
     }
     .franklin-mountains {
+        width: 100vw;
+        min-width: 100vw;
+        max-width: 100vw;
+        /* Adjusted mobile shape for full coverage and taller look */
         clip-path: polygon(
             0% 100%,
             0% 80%,
-            30% 15%,
-            50% 30%,
-            80% 18%,
-            100% 35%,
-            90% 60%,
+            10% 50%,
+            20% 25%,
+            30% 35%,
+            42% 12%,
+            52% 38%,
+            60% 18%,
+            70% 44%,
+            80% 14%,
+            90% 35%,
+            98% 20%,
+            100% 8%,
             100% 100%
         );
     }
@@ -417,42 +445,29 @@ h1, .lowered-title {
     .mountains {
         height: 30vh;
         bottom: 12vh;
+        width: 100vw;
+        min-width: 100vw;
+        max-width: 100vw;
     }
     .franklin-mountains {
+        width: 100vw;
+        min-width: 100vw;
+        max-width: 100vw;
         clip-path: polygon(
             0% 100%,
             0% 80%,
-            30% 15%,
-            50% 30%,
-            80% 18%,
-            100% 35%,
-            90% 60%,
+            10% 50%,
+            20% 25%,
+            30% 35%,
+            42% 12%,
+            52% 38%,
+            60% 18%,
+            70% 44%,
+            80% 14%,
+            90% 35%,
+            98% 20%,
+            100% 8%,
             100% 100%
         );
-    }
-    h1, .lowered-title {
-        font-size: 36px;
-    }
-    .blink {
-        font-size: 20px;
-    }
-    .planet-system {
-        width: 180px;
-        height: 180px;
-    }
-    .logo-space {
-        width: 80px;
-        height: 80px;
-    }
-    .logo-image {
-        max-width: 80px;
-    }
-    .content {
-        padding: 10px;
-        margin-top: 1vh;
-    }
-    .social-media {
-        max-width: 90vw;
-        left: 5vw;
     }
 }
