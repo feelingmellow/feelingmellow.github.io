@@ -319,15 +319,9 @@ h1 {
 #events { bottom: -10%; left: 50%; transform: translateX(-50%); }
 #yoga { bottom: 10%; left: 10%; }
 
+/* Hide Instagram and follow us message */
 .social-media {
-    position: fixed;
-    bottom: 10px;
-    left: 10px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    width: 100%;
-    max-width: 300px;
+    display: none !important;
 }
 
 .social-icon {
