@@ -108,7 +108,7 @@ body {
     position: absolute;
     bottom: 15vh;
     left: 0;
-    width: 200vw;
+    width: 100vw;
     height: 22vh;
     z-index: 1;
     pointer-events: none;
@@ -126,7 +126,7 @@ body {
         30% 10%,    /* Peak of first (widest) mountain */
         50% 20%,    /* Valley between first and second mountains */
         80% 15%,    /* Peak of second mountain */
-        100% 20%,   /* Valley between second and third mountains */
+        100% 80%,   /* Valley between second and third mountains */
         90% 45%,    /* Peak of third mountain - fixed from 200% */
         100% 100%   /* End at bottom-right */
     );
