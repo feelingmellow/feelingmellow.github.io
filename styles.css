@@ -346,6 +346,11 @@ h1, .lowered-title {
     display: none;
 }
 
+/* Hide menu and library button */
+#menu, #library {
+    display: none !important;
+}
+
 /* Responsive adjustments */
 @media (max-width: 900px) {
     .planet-system {
