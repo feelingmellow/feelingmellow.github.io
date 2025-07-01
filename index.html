@@ -9,21 +9,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         .blink {
-            color: black;
+            color: black; /* Font color remains black */
             position: relative;
-            top: -15%;
+            top: -15%; /* Raised by 15% */
         }
         .logo-image {
-            background: transparent;
+            background: transparent; /* Ensures no white background */
         }
         /* Hide all icons except Library and Menu */
         #contact, #art, #plants, #clock, #events, #yoga {
             display: none;
         }
+        /* Make the moon logo (about.html link) visible but not clickable */
         .logo-space {
             pointer-events: none;
             cursor: default;
         }
+        /* Lower the "Have A Mellow Day" text by 15% vertically */
         .lowered-title {
             position: relative;
             top: 35%;
@@ -31,25 +33,6 @@
         /* Hide the entire social-media bar */
         .social-media {
             display: none !important;
-        }
-        .menu-main-btn {
-            display: inline-block;
-            margin: 30px auto 0 auto;
-            padding: 18px 36px;
-            font-family: 'Amatic SC', cursive;
-            font-size: 2rem;
-            background: #FFA500;
-            color: #fff;
-            border: none;
-            border-radius: 16px;
-            box-shadow: 0 2px 8px rgba(44,36,31,0.10);
-            cursor: pointer;
-            text-decoration: none;
-            transition: background 0.2s, color 0.2s;
-        }
-        .menu-main-btn:hover {
-            background: #ff9720;
-            color: #fffbe0;
         }
     </style>
 </head>
@@ -72,11 +55,16 @@
     <div class="content">
         <h1 class="lowered-title">Have A Mellow Day</h1>
         <div class="planet-system">
+            <!-- The about.html (moon logo) link is now visible but not clickable -->
             <a href="about.html" class="logo-space">
                 <img src="themoon.png" alt="Mellow Logo" class="logo-image">
             </a>
+            <!-- Menu and Library buttons removed -->
         </div>
-        <a href="menu.html" class="menu-main-btn">View Menu</a>
+    </div>
+    <div class="social-media">
+        <a href="https://www.instagram.com/mellowelpaso" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+        <marquee behavior="scroll" direction="left" scrollamount="3" class="social-text">follow @mellowelpaso</marquee>
     </div>
     <p class="blink"></p>
     <script>
