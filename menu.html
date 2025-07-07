@@ -4,47 +4,82 @@
   <meta charset="UTF-8">
   <title>Mellow El Paso Menu</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
     body {
-      font-family: Arial, sans-serif;
-      background: #fffbea;
-      color: #4a3c2a;
-      margin: 2em;
+      margin: 0;
+      padding: 0;
+      background: #87CEEB; /* Sky blue from homepage */
+      color: #8B4513;      /* Brown from homepage */
+      font-family: 'Amatic SC', cursive;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    header {
+      margin-top: 2em;
+      margin-bottom: 1em;
     }
     h1 {
-      text-align: center;
+      font-size: 2.5em;
       letter-spacing: 2px;
+      margin: 0;
+      color: #8B4513;
+      text-shadow: 1px 1px 0 #FFD700, 0 0 10px #fffbe7; /* Gold/yellow glow */
     }
     ul.menu-list {
       list-style: none;
       padding: 0;
-      max-width: 400px;
-      margin: 2em auto;
-      background: #fffbf0;
-      border-radius: 12px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      margin: 0;
+      background: #fffbe7; /* Soft sand background */
+      border-radius: 18px;
+      box-shadow: 0 2px 14px rgba(139, 69, 19, 0.07);
+      max-width: 340px;
+      width: 90vw;
+      font-size: 1.5em;
+      border: 2px solid #FFD700; /* Gold border */
     }
     ul.menu-list li {
-      margin: 0;
-      border-bottom: 1px solid #e6e2d3;
+      border-bottom: 1px solid #E0C96B;
     }
     ul.menu-list li:last-child {
       border-bottom: none;
     }
     ul.menu-list a {
       display: block;
-      padding: 1.2em 1.5em;
-      color: #4a3c2a;
+      padding: 1em 1.5em;
+      color: #8B4513;
       text-decoration: none;
-      font-size: 1.1em;
-      transition: background 0.2s;
+      transition: background 0.18s, color 0.18s;
+      border-radius: 14px;
     }
     ul.menu-list a:hover {
-      background: #f3e9d2;
+      background: #FFD700;
+      color: #4a3c2a;
+    }
+    .back-link {
+      margin-top: 2em;
+      display: inline-block;
+      font-size: 1.2em;
+      color: #4a3c2a;
+      background: #fffbe7;
+      border: 1px solid #FFD700;
+      border-radius: 10px;
+      padding: 0.5em 1.4em;
+      text-decoration: none;
+      transition: background 0.16s, color 0.16s;
+    }
+    .back-link:hover {
+      background: #FFD700;
+      color: #8B4513;
     }
   </style>
 </head>
 <body>
-  <h1>Mellow El Paso Menu</h1>
+  <header>
+    <h1>Mellow Menu</h1>
+  </header>
   <ul class="menu-list">
     <li><a href="https://pay.mellowelpaso.com/firsttime" target="_blank">First Time</a></li>
     <li><a href="https://pay.mellowelpaso.com/kava" target="_blank">Kava</a></li>
@@ -56,5 +91,6 @@
     <li><a href="https://pay.mellowelpaso.com/pinacalmada" target="_blank">Piña Calmada</a></li>
     <li><a href="https://pay.mellowelpaso.com/lakavachata" target="_blank">La Kavachata</a></li>
   </ul>
+  <a class="back-link" href="index.html">&larr; Back to Home</a>
 </body>
 </html>
