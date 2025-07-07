@@ -8,6 +8,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Prevent scrolling */
+        }
+        body {
+            width: 100vw;
+            height: 100vh;
+            box-sizing: border-box;
+            font-family: 'Amatic SC', cursive;
+            color: #8B4513;
+            text-align: center;
+            background: #87CEEB;
+        }
         .blink {
             color: black; /* Font color remains black */
             position: relative;
@@ -50,6 +65,27 @@
         .menu-link:hover {
             background: #e8d7b9;
         }
+        /* Ensure content fits in viewport */
+        .landscape, .content, .dust-container {
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            left: 0;
+            top: 0;
+            z-index: 2;
+        }
     </style>
 </head>
 <body>
@@ -77,7 +113,7 @@
             </a>
             <!-- Menu and Library buttons removed -->
         </div>
-        <!-- Added Menu Link Below -->
+        <!-- Menu Link -->
         <a class="menu-link" href="menu.html">View Our Menu</a>
     </div>
     <div class="social-media">
