@@ -3,25 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Have A Mellow Day</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         html, body {
             height: 100%;
+            width: 100%;
             margin: 0;
             padding: 0;
             overflow: hidden; /* Prevent scrolling */
         }
         body {
-            width: 100vw;
-            height: 100vh;
-            box-sizing: border-box;
             font-family: 'Amatic SC', cursive;
             color: #8B4513;
             text-align: center;
             background: #87CEEB;
+            height: 100vh;   /* Ensure full viewport height */
+            width: 100vw;    /* Ensure full viewport width */
         }
         .blink {
             color: black; /* Font color remains black */
@@ -31,25 +31,20 @@
         .logo-image {
             background: transparent; /* Ensures no white background */
         }
-        /* Hide all icons except Library and Menu */
         #contact, #art, #plants, #clock, #events, #yoga {
             display: none;
         }
-        /* Make the moon logo (about.html link) visible but not clickable */
         .logo-space {
             pointer-events: none;
             cursor: default;
         }
-        /* Lower the "Have A Mellow Day" text by 15% vertically */
         .lowered-title {
             position: relative;
             top: 35%;
         }
-        /* Hide the entire social-media bar */
         .social-media {
             display: none !important;
         }
-        /* --- Added for Menu Link --- */
         .menu-link {
             display: inline-block;
             margin-top: 2em;
@@ -65,26 +60,75 @@
         .menu-link:hover {
             background: #e8d7b9;
         }
-        /* Ensure content fits in viewport */
-        .landscape, .content, .dust-container {
-            position: absolute;
-            width: 100vw;
+        .landscape,
+        .content,
+        .dust-container {
+            box-sizing: border-box;
+        }
+        .landscape {
             height: 100vh;
+            width: 100vw;
+            position: fixed;
             top: 0;
             left: 0;
-            overflow: hidden;
+            z-index: -1;
+            /* fill the background fully */
         }
         .content {
+            position: relative;
+            min-height: 100vh;
+            min-width: 100vw;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
+        }
+        /* Fix for mountains not filling the bottom */
+        .mountains {
             position: absolute;
-            width: 100vw;
-            height: 100vh;
+            bottom: 0;
             left: 0;
-            top: 0;
+            width: 100%;
+            height: 40vh;
+            min-height: 200px;
+            z-index: 1;
+        }
+        .franklin-mountains {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, #8B4513, #A0522D);
+            clip-path: polygon(
+                0% 100%,    /* Start at bottom-left */
+                0% 80%,     /* Base of first mountain */
+                30% 10%,    /* Peak of first (widest) mountain */
+                50% 20%,    /* Valley between first and second mountains */
+                70% 5%,     /* Peak of second mountain */
+                100% 80%,   /* Base of last mountain */
+                100% 100%   /* End at bottom-right */
+            );
+        }
+        .desert {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 15vh;
+            min-height: 80px;
+            background: linear-gradient(to top, #e8d7b9 90%, transparent 100%);
             z-index: 2;
+            pointer-events: none;
+        }
+        /* Optionally, adjust .sky to cover the top area and .sun/clouds as needed */
+        .sky {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 70vh;
+            background: linear-gradient(to bottom, #87CEEB, #E0F6FF);
         }
     </style>
 </head>
@@ -107,13 +151,10 @@
     <div class="content">
         <h1 class="lowered-title">Have A Mellow Day</h1>
         <div class="planet-system">
-            <!-- The about.html (moon logo) link is now visible but not clickable -->
             <a href="about.html" class="logo-space">
                 <img src="themoon.png" alt="Mellow Logo" class="logo-image">
             </a>
-            <!-- Menu and Library buttons removed -->
         </div>
-        <!-- Menu Link -->
         <a class="menu-link" href="menu.html">View Our Menu</a>
     </div>
     <div class="social-media">
