@@ -1,96 +1,213 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Mellow El Paso Menu</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
-    body {
-      margin: 0;
-      padding: 0;
-      background: #87CEEB; /* Sky blue from homepage */
-      color: #8B4513;      /* Brown from homepage */
-      font-family: 'Amatic SC', cursive;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevent scrolling */
+}
+
+body {
+    font-family: 'Amatic SC', cursive;
+    color: #8B4513;
+    text-align: center;
+    background: #87CEEB;
+    height: 100vh;
+    width: 100vw;
+}
+
+.landscape {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+
+.sky {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 70vh;
+    background: linear-gradient(to bottom, #87CEEB, #E0F6FF);
+}
+
+.sun {
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 80px;
+    background: #FFD700;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+}
+
+.sun::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: repeating-conic-gradient(from 0deg, transparent 0deg 15deg, #FFD700 15deg 20deg);
+}
+
+.cloud {
+    position: absolute;
+    background: white;
+    border-radius: 20px;
+    opacity: 0.8;
+}
+
+.cloud::before,
+.cloud::after {
+    content: '';
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+}
+
+.cloud1 {
+    width: 100px;
+    height: 30px;
+    top: 80px;
+    left: 20%;
+}
+
+.cloud1::before {
+    width: 50px;
+    height: 50px;
+    top: -25px;
+    left: 10px;
+}
+
+.cloud1::after {
+    width: 70px;
+    height: 70px;
+    top: -35px;
+    right: 10px;
+}
+
+.cloud2 {
+    width: 140px;
+    height: 40px;
+    top: 60px;
+    right: 20%;
+}
+
+.cloud2::before {
+    width: 70px;
+    height: 70px;
+    top: -35px;
+    left: 15px;
+}
+
+.cloud2::after {
+    width: 90px;
+    height: 90px;
+    top: -45px;
+    right: 15px;
+}
+
+.mountains {
+    position: absolute;
+    bottom: 0; /* Changed from 15% to 0 for full coverage */
+    left: 0;
+    width: 100vw;
+    height: 40vh; /* Use viewport units for consistency */
+    min-height: 200px;
+    z-index: 1;
+}
+
+.franklin-mountains {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #8B4513, #A0522D);
+    clip-path: polygon(
+        0% 100%,    /* Start at bottom-left */
+        0% 80%,     /* Base of first mountain */
+        30% 10%,    /* Peak of first (widest) mountain */
+        50% 20%,    /* Valley between first and second mountains */
+        70% 5%,     /* Peak of second mountain */
+        100% 80%,   /* Base of last mountain */
+        100% 100%   /* End at bottom-right */
+    );
+}
+
+.desert {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 15vh; /* Use viewport units for consistency */
+    min-height: 80px;
+    background: linear-gradient(to top, #e8d7b9 90%, transparent 100%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.cactus {
+    position: absolute;
+    bottom: 10px;
+    width: 40px;
+    height: 70px;
+    background: #228B22;
+    border-radius: 10px 10px 20px 20px / 30px 30px 40px 40px;
+    left: 10%;
+    box-shadow: 60vw 0 0 0 #228B22, 80vw 0 0 0 #228B22;
+}
+
+.star {
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    width: 24px;
+    height: 24px;
+    background: yellow;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    box-shadow: 0 0 8px 2px #fffbe3;
+    z-index: 3;
+}
+
+.dust-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.dust-particle {
+    position: absolute;
+    bottom: 0;
+    width: 4px;
+    height: 4px;
+    background: #fffbe3;
+    border-radius: 50%;
+    opacity: 0.7;
+    animation: dust 10s linear infinite;
+}
+
+@keyframes dust {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.7;
     }
-    header {
-      margin-top: 2em;
-      margin-bottom: 1em;
+    80% {
+        opacity: 0.7;
     }
-    h1 {
-      font-size: 2.5em;
-      letter-spacing: 2px;
-      margin: 0;
-      color: #8B4513;
-      text-shadow: 1px 1px 0 #FFD700, 0 0 10px #fffbe7; /* Gold/yellow glow */
+    100% {
+        transform: translateY(-100vh) scale(0.8);
+        opacity: 0;
     }
-    ul.menu-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      background: #fffbe7; /* Soft sand background */
-      border-radius: 18px;
-      box-shadow: 0 2px 14px rgba(139, 69, 19, 0.07);
-      max-width: 340px;
-      width: 90vw;
-      font-size: 1.5em;
-      border: 2px solid #FFD700; /* Gold border */
-    }
-    ul.menu-list li {
-      border-bottom: 1px solid #E0C96B;
-    }
-    ul.menu-list li:last-child {
-      border-bottom: none;
-    }
-    ul.menu-list a {
-      display: block;
-      padding: 1em 1.5em;
-      color: #8B4513;
-      text-decoration: none;
-      transition: background 0.18s, color 0.18s;
-      border-radius: 14px;
-    }
-    ul.menu-list a:hover {
-      background: #FFD700;
-      color: #4a3c2a;
-    }
-    .back-link {
-      margin-top: 2em;
-      display: inline-block;
-      font-size: 1.2em;
-      color: #4a3c2a;
-      background: #fffbe7;
-      border: 1px solid #FFD700;
-      border-radius: 10px;
-      padding: 0.5em 1.4em;
-      text-decoration: none;
-      transition: background 0.16s, color 0.16s;
-    }
-    .back-link:hover {
-      background: #FFD700;
-      color: #8B4513;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Mellow Menu</h1>
-  </header>
-  <ul class="menu-list">
-    <li><a href="https://pay.mellowelpaso.com/firsttime" target="_blank">First Time</a></li>
-    <li><a href="https://pay.mellowelpaso.com/kava" target="_blank">Kava</a></li>
-    <li><a href="https://pay.mellowelpaso.com/holyhibiscus" target="_blank">Holy Hibiscus</a></li>
-    <li><a href="https://pay.mellowelpaso.com/lavenderhaze" target="_blank">Lavender Haze</a></li>
-    <li><a href="https://pay.mellowelpaso.com/javaconkava" target="_blank">Java con Kava</a></li>
-    <li><a href="https://pay.mellowelpaso.com/suncitysunset" target="_blank">Sun City Sunset</a></li>
-    <li><a href="https://pay.mellowelpaso.com/nopalnoproblem" target="_blank">Nopal No Problem</a></li>
-    <li><a href="https://pay.mellowelpaso.com/pinacalmada" target="_blank">Piña Calmada</a></li>
-    <li><a href="https://pay.mellowelpaso.com/lakavachata" target="_blank">La Kavachata</a></li>
-  </ul>
-  <a class="back-link" href="index.html">&larr; Back to Home</a>
-</body>
-</html>
+}
