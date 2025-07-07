@@ -1,28 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
 
-html, body {
-    height: 100%;
-    width: 100%;
+body {
     margin: 0;
     padding: 0;
-    overflow: hidden; /* Prevent scrolling */
-}
-
-body {
     font-family: 'Amatic SC', cursive;
     color: #8B4513;
     text-align: center;
+    overflow-x: hidden;
     background: #87CEEB;
-    height: 100vh;
-    width: 100vw;
 }
 
 .landscape {
     position: fixed;
-    top: 0;
+    bottom: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     z-index: -1;
 }
 
@@ -30,8 +23,8 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 70vh;
+    width: 100%;
+    height: 70%;
     background: linear-gradient(to bottom, #87CEEB, #E0F6FF);
 }
 
@@ -116,11 +109,10 @@ body {
 
 .mountains {
     position: absolute;
-    bottom: 0; /* Changed from 15% to 0 for full coverage */
+    bottom: 15%;
     left: 0;
-    width: 100vw;
-    height: 40vh; /* Use viewport units for consistency */
-    min-height: 200px;
+    width: 100%;
+    height: 40%;
     z-index: 1;
 }
 
@@ -146,9 +138,8 @@ body {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 100vw;
-    height: 15vh; /* Use viewport units for consistency */
-    min-height: 80px;
+    width: 100%;
+    height: 15%;
     background: linear-gradient(to top, #e8d7b9 90%, transparent 100%);
     z-index: 2;
     pointer-events: none;
