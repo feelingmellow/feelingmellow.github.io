@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mellow Menu</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .menu-container {
+            background: rgba(255,255,255,0.92);
+            max-width: 500px;
+            margin: 60px auto 30px auto;
+            border-radius: 18px;
+            box-shadow: 0 6px 32px rgba(139, 69, 19, 0.15);
+            padding: 36px 28px 32px 28px;
+            position: relative;
+            z-index: 10;
+        }
+        .menu-title {
+            font-family: 'Amatic SC', cursive;
+            font-size: 64px;
+            color: #FFA500;
+            text-shadow: 2px 2px #8B4513;
+            margin-bottom: 16px;
+            letter-spacing: 2px;
+        }
+        .menu-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .menu-item {
+            margin: 28px 0;
+        }
+        .menu-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            font-family: 'Amatic SC', cursive;
+            font-size: 38px;
+            color: #8B4513;
+            background: #FFD70011;
+            border-radius: 14px;
+            padding: 18px 8px 12px 8px;
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 12px rgba(255, 215, 0, 0.09);
+        }
+        .menu-link:hover {
+            background: #FFA50033;
+            color: #A0522D;
+            box-shadow: 0 4px 24px rgba(255, 215, 0, 0.19);
+        }
+        .menu-desc {
+            font-size: 22px;
+            color: #A0522D;
+            margin-top: 3px;
+            font-weight: 400;
+            opacity: 0.8;
+        }
+        @media (max-width: 600px) {
+            .menu-container {
+                padding: 8vw 2vw 8vw 2vw;
+                max-width: 96vw;
+            }
+            .menu-title {
+                font-size: 44px;
+            }
+            .menu-link {
+                font-size: 26px;
+            }
+            .menu-desc {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="landscape">
+        <div class="sky"></div>
+        <div class="sun"></div>
+        <div class="cloud cloud1"></div>
+        <div class="cloud cloud2"></div>
+        <div class="mountains">
+            <div class="franklin-mountains"></div>
+            <a href="star.html" class="star"></a>
+        </div>
+        <div class="desert">
+            <a href="cactus.html" class="cactus"></a>
+            <a href="cactus.html" class="cactus"></a>
+        </div>
+    </div>
+    <div class="dust-container"></div>
+    <div class="menu-container">
+        <div class="menu-title">Menu</div>
+        <ul class="menu-list">
+            <li class="menu-item">
+                <a href="https://pay.mellowelpaso.com/firsttime" class="menu-link" target="_blank">First Timer
+                    <span class="menu-desc">Extra concentrated Kava</span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="https://pay.mellowelpaso.com/kava" class="menu-link" target="_blank">Kava
+                    <span class="menu-desc">Traditional Kava</span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="https://pay.mellowelpaso.com/holyhibiscus" class="menu-link" target="_blank">Holy Hibiscus
+                    <span class="menu-desc">Hibiscus Elixir</span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="https://pay.mellowelpaso.com/riogrande" class="menu-link" target="_blank">Rio Grande
+                    <span class="menu-desc">Blue raspberry coconut Lotus</span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="https://pay.mellowelpaso.com/javaconkava" class="menu-link" target="_blank">Java con Kava
+                    <span class="menu-desc">Coffee and Kava</span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="https://https://pay.mellowelpaso.com/fresa" class="menu-link" target="_blank">Fresa
+                    <span class="menu-desc">Strawberries & Cream Kava</span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="https://pay.mellowelpaso.com/minersgold" class="menu-link" target="_blank">Miner's Gold
+                    <span class="menu-desc">Mango and Elixir </span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="https://pay.mellowelpaso.com/pinacalmada" class="menu-link" target="_blank">Pina Calmada
+                    <span class="menu-desc">Pina Colada Kava</span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="https://pay.mellowelpaso.com/lakavachata" class="menu-link" target="_blank">La Kavachata
+                    <span class="menu-desc">Horchata Kava</span>
+                </a>
+            </li>
+        </ul>
+        <a href="index.html" class="nav-button" style="display:block; width:fit-content; margin:32px auto 0 auto; background:#FFA500; color:white; font-family:'Amatic SC',cursive; font-size:26px; padding:14px 32px; border-radius:12px; text-decoration:none; box-shadow:0 2px 12px rgba(255,215,0,0.13);">Back to Home</a>
+    </div>
+</body>
+</html>
