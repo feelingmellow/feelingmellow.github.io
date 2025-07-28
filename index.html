@@ -3,36 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Have A Mellow Day</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
-        .blink {
-            color: black; /* Font color remains black */
-            position: relative;
-            top: -15%; /* Raised by 15% */
+        .menu-main-btn {
+            display: block;
+            margin: 40px auto 0 auto;
+            padding: 20px 60px;
+            background: #FFA500;
+            color: #fff;
+            font-size: 38px;
+            font-family: 'Amatic SC', cursive;
+            border: none;
+            border-radius: 18px;
+            box-shadow: 0 4px 18px rgba(255,165,0,0.17);
+            text-decoration: none;
+            text-align: center;
+            transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
         }
-        .logo-image {
-            background: transparent; /* Ensures no white background */
+        .menu-main-btn:hover {
+            background: #ffb733;
+            transform: scale(1.05);
+            box-shadow: 0 8px 32px rgba(255,165,0,0.32);
+            color: #8B4513;
         }
-        /* Hide all icons except Library and Menu */
-        #contact, #art, #plants, #clock, #events, #yoga {
-            display: none;
-        }
-        /* Make the moon logo (about.html link) visible but not clickable */
-        .logo-space {
-            pointer-events: none;
-            cursor: default;
-        }
-        /* Lower the "Have A Mellow Day" text by 15% vertically */
-        .lowered-title {
-            position: relative;
-            top: 35%;
-        }
-        /* Hide the entire social-media bar */
-        .social-media {
-            display: none !important;
+        .planet-system {
+            margin-top: 32px;
         }
     </style>
 </head>
@@ -55,12 +54,11 @@
     <div class="content">
         <h1 class="lowered-title">Have A Mellow Day</h1>
         <div class="planet-system">
-            <!-- The about.html (moon logo) link is now visible but not clickable -->
             <a href="about.html" class="logo-space">
                 <img src="themoon.png" alt="Mellow Logo" class="logo-image">
             </a>
-            <!-- Menu and Library buttons removed -->
         </div>
+        <a class="menu-main-btn" href="menu.html">View Menu</a>
     </div>
     <div class="social-media">
         <a href="https://www.instagram.com/mellowelpaso" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
